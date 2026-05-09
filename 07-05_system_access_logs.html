@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>접속자관리 | DAESINLOAN</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/system.css">
+</head>
+<body>
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <main class="app__main">
+    <header class="page-header">
+      <h1>접속자관리</h1>
+    </header>
+
+    <section class="page-body">
+      <form class="system-filter-bar" onsubmit="return false;">
+        <div class="field">
+          <label for="access-ip">IP검색</label>
+          <input id="access-ip" class="input" type="text" placeholder="예: 61.73.8.159">
+        </div>
+        <div class="field">
+          <label for="access-user">이름/아이디</label>
+          <input id="access-user" class="input" type="text">
+        </div>
+        <div class="field">
+          <label for="access-date-from">접속시작일</label>
+          <input id="access-date-from" class="input" type="date" value="2026-05-08">
+        </div>
+        <div class="field">
+          <label for="access-date-to">접속 종료일</label>
+          <input id="access-date-to" class="input" type="date" value="2026-05-09">
+        </div>
+        <div class="system-filter-bar__actions">
+          <button type="submit" class="btn btn--primary">검색실행</button>
+          <button type="reset" class="btn btn--outline">검색취소</button>
+        </div>
+      </form>
+
+      <div class="table-wrap system-table-wrap">
+        <table class="table system-table access-log-table">
+          <thead>
+            <tr>
+              <th class="system-table__col-no">번호</th>
+              <th class="system-table__col-name">이름</th>
+              <th class="system-table__col-code">아이디</th>
+              <th class="system-table__col-desc">IP</th>
+              <th class="system-table__col-date">날짜</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1748</td>
+              <td>더블유</td>
+              <td>daesinloan</td>
+              <td>61.73.8.159</td>
+              <td>2026-05-09 13:00</td>
+            </tr>
+            <tr>
+              <td>1747</td>
+              <td>더블유</td>
+              <td>daesinloan</td>
+              <td>14.4.97.199</td>
+              <td>2026-05-09 11:46</td>
+            </tr>
+            <tr>
+              <td>1746</td>
+              <td>jsm</td>
+              <td>jsm</td>
+              <td>182.212.232.7</td>
+              <td>2026-05-09 09:18</td>
+            </tr>
+            <tr>
+              <td>1745</td>
+              <td>더블유</td>
+              <td>daesinloan</td>
+              <td>125.142.110.64</td>
+              <td>2026-05-08 20:35</td>
+            </tr>
+            <tr>
+              <td>1744</td>
+              <td>hillyou</td>
+              <td>hillyou</td>
+              <td>175.197.43.15</td>
+              <td>2026-05-08 20:10</td>
+            </tr>
+            <tr>
+              <td>1743</td>
+              <td>김종원</td>
+              <td>김종원</td>
+              <td>59.17.187.89</td>
+              <td>2026-05-08 17:18</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="system-pagination-summary">
+        <span class="system-pagination-count">전체 1728 개</span>
+        <span class="pagination">
+          <button type="button" class="is-active">1</button>
+          <button type="button">2</button>
+          <button type="button">3</button>
+          <button type="button">4</button>
+          <button type="button">5</button>
+          <button type="button">다음</button>
+        </span>
+        <span class="system-pagination-total">Total 87 Pages</span>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="js/sidebar-render.js"></script>
+</body>
+</html>

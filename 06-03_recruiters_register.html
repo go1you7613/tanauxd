@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모집인 등록 | DAESINLOAN</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/recruiters.css">
+</head>
+<body>
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <main class="app__main">
+    <header class="page-header">
+      <h1>모집인 관리</h1>
+      <div class="recruiter-page-actions">
+        <a href="06-01_recruiters_list.html" class="btn btn--outline">목록으로</a>
+      </div>
+    </header>
+
+    <section class="page-body">
+      <form class="recruiter-panel" action="#" method="post">
+        <table class="recruiter-form-grid">
+          <tbody>
+            <tr><th scope="row"><label for="recruiter-finance">금융사</label></th><td><select id="recruiter-finance" class="select"><option>삼호AG</option><option>오케이엔AG</option><option>문키AG</option><option>프라</option></select></td></tr>
+            <tr><th scope="row"><label for="recruiter-branch">지사</label></th><td><select id="recruiter-branch" class="select"><option>본사</option><option>jsm</option><option>프라</option></select></td></tr>
+            <tr><th scope="row"><label for="recruiter-reg-code">모집인 등록번호</label></th><td><input id="recruiter-reg-code" class="input" type="text"></td></tr>
+            <tr><th scope="row"><label for="recruiter-name">모집인명</label></th><td><input id="recruiter-name" class="input" type="text"></td></tr>
+            <tr><th scope="row"><label for="recruiter-code">모집인번호</label></th><td><input id="recruiter-code" class="input" type="text"></td></tr>
+            <tr><th scope="row"><label for="recruiter-phone">전화번호</label></th><td><input id="recruiter-phone" class="input" type="tel" placeholder="010-0000-0000"></td></tr>
+            <tr><th scope="row"><label for="recruiter-date">등록일</label></th><td><input id="recruiter-date" class="input" type="date"></td></tr>
+          </tbody>
+        </table>
+        <div class="recruiter-actions">
+          <button type="submit" class="btn btn--primary">등록</button>
+          <a href="06-01_recruiters_list.html" class="btn btn--outline">취소</a>
+        </div>
+      </form>
+    </section>
+  </main>
+</div>
+<script src="js/sidebar-render.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공지사항 등록 | DAESINLOAN</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/notices.css">
+</head>
+<body>
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <main class="app__main">
+    <header class="page-header">
+      <h1>공지사항</h1>
+      <div class="notice-page-actions">
+        <a href="04-01_notices_list.html" class="btn btn--outline">목록으로</a>
+      </div>
+    </header>
+
+    <section class="page-body">
+      <form class="notice-form" action="#" method="post" enctype="multipart/form-data">
+        <table class="notice-form__grid">
+          <tbody>
+            <tr>
+              <th scope="row"><label for="notice-title">제목</label></th>
+              <td><input id="notice-title" class="input" type="text"></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="notice-category-register">구분</label></th>
+              <td>
+                <select id="notice-category-register" class="select">
+                  <option selected>공지</option>
+                  <option>중요</option>
+                  <option>업데이트</option>
+                  <option>점검</option>
+                  <option>안내</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">속성</th>
+              <td>
+                <div class="notice-form__inline">
+                  <label><input type="checkbox"> 상단 고정</label>
+                  <label><input type="radio" name="notice-open" checked> 공개</label>
+                  <label><input type="radio" name="notice-open"> 비공개</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="notice-author">작성자</label></th>
+              <td><input id="notice-author" class="input" type="text" value="관리자"></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="notice-content">내용</label></th>
+              <td><textarea id="notice-content" class="textarea"></textarea></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="notice-files">첨부파일</label></th>
+              <td>
+                <input id="notice-files" class="input" type="file" multiple aria-describedby="notice-files-hint">
+                <p id="notice-files-hint" class="notice-form__file-hint">선택된 파일 없음</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="notice-form__actions">
+          <button type="submit" class="btn btn--primary">등록</button>
+          <a href="04-01_notices_list.html" class="btn btn--outline">취소</a>
+        </div>
+      </form>
+    </section>
+  </main>
+</div>
+<script src="js/notices.js"></script>
+<script src="js/sidebar-render.js"></script>
+</body>
+</html>

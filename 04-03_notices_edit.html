@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공지사항 수정 | DAESINLOAN</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/notices.css">
+</head>
+<body>
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <main class="app__main">
+    <header class="page-header">
+      <h1>공지사항</h1>
+      <div class="notice-page-actions">
+        <a href="04-02_notices_detail.html" class="btn btn--outline">상세로</a>
+        <a href="04-01_notices_list.html" class="btn btn--outline">목록으로</a>
+      </div>
+    </header>
+
+    <section class="page-body">
+      <form class="notice-form" action="#" method="post" enctype="multipart/form-data">
+        <table class="notice-form__grid">
+          <tbody>
+            <tr>
+              <th scope="row"><label for="notice-title">제목</label></th>
+              <td><input id="notice-title" class="input" type="text" value="대출 모집인 전산 사용 기준 안내"></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="notice-category-edit">구분</label></th>
+              <td>
+                <select id="notice-category-edit" class="select">
+                  <option>공지</option>
+                  <option selected>중요</option>
+                  <option>업데이트</option>
+                  <option>점검</option>
+                  <option>안내</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">속성</th>
+              <td>
+                <div class="notice-form__inline">
+                  <label><input type="checkbox" checked> 상단 고정</label>
+                  <label><input type="radio" name="notice-open" checked> 공개</label>
+                  <label><input type="radio" name="notice-open"> 비공개</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="notice-author">작성자</label></th>
+              <td><input id="notice-author" class="input" type="text" value="관리자"></td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="notice-content">내용</label></th>
+              <td>
+                <textarea id="notice-content" class="textarea">대출 모집인 전산 사용 시 고객 정보 확인, 상품 선택, 첨부파일 등록 기준을 아래와 같이 안내합니다.
+
+업무 처리 전 최신 공지와 첨부된 운영 가이드를 확인해 주세요.</textarea>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">기존 첨부파일</th>
+              <td>
+                <p class="notice-form__current-file"><a href="#">대출모집인_전산사용기준.pdf</a> <label><input type="checkbox"> 삭제</label></p>
+                <p class="notice-form__current-file"><a href="#">첨부파일_등록_예시.xlsx</a> <label><input type="checkbox"> 삭제</label></p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row"><label for="notice-files">첨부파일 추가</label></th>
+              <td>
+                <input id="notice-files" class="input" type="file" multiple aria-describedby="notice-files-hint">
+                <p id="notice-files-hint" class="notice-form__file-hint">선택된 파일 없음</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="notice-form__actions">
+          <button type="submit" class="btn btn--primary">저장</button>
+          <a href="04-02_notices_detail.html" class="btn btn--outline">취소</a>
+        </div>
+      </form>
+    </section>
+  </main>
+</div>
+<script src="js/notices.js"></script>
+<script src="js/sidebar-render.js"></script>
+</body>
+</html>

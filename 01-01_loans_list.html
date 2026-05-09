@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>대출진행목록 | DAESINLOAN</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/loans-list.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- ── 사이드바 ── -->
+  <div id="sidebar-root"></div>
+
+  <!-- ── 본문 ── -->
+  <main class="app__main">
+    <header class="page-header">
+      <h1>대출진행목록</h1>
+      <div style="display:flex; gap: var(--space-8);">
+        <button class="btn btn--outline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          엑셀 다운로드
+        </button>
+        <button class="btn btn--primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          고객등록
+        </button>
+      </div>
+    </header>
+
+    <section class="page-body">
+
+      <!-- 검색 필터 바 -->
+      <form class="filter-bar" onsubmit="return false;">
+        <div class="field">
+          <label for="f-date">접수일자</label>
+          <input id="f-date" class="input" type="date" value="2026-04-01">
+        </div>
+        <div class="field">
+          <label for="f-branch">지사</label>
+          <select id="f-branch" class="select">
+            <option>전체</option>
+            <option>강남지사</option>
+            <option>판교지사</option>
+            <option>부산지사</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-status">처리상태</label>
+          <select id="f-status" class="select">
+            <option>전체</option>
+            <option>검토중</option>
+            <option>승인</option>
+            <option>반려</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-keyword">신청자명 / 전화</label>
+          <input id="f-keyword" class="input" type="text" placeholder="검색어 입력">
+        </div>
+        <div class="filter-bar__actions">
+          <button type="reset" class="btn btn--outline">초기화</button>
+          <button type="submit" class="btn btn--primary">검색</button>
+        </div>
+      </form>
+
+      <!-- 데이터 테이블 -->
+      <div class="table-wrap loans-table-wrap">
+        <table class="table loans-table">
+          <thead>
+            <tr>
+              <th>접수일시</th>
+              <th>지사명</th>
+              <th>전송담당</th>
+              <th class="u-center">신청여부</th>
+              <th>상품명</th>
+              <th>신청자</th>
+              <th>주민번호</th>
+              <th class="u-num">신청금액</th>
+              <th class="u-num">가승인액</th>
+              <th class="u-center">처리상태</th>
+              <th class="u-center">처리일</th>
+              <th class="u-num">승인금액</th>
+              <th class="u-num">승인이율</th>
+              <th class="u-center">서류</th>
+              <th>사유</th>
+              <th class="u-center">메모</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2026-04-22 10:14</td>
+              <td>강남지사</td>
+              <td>김창균</td>
+              <td class="u-center"><span class="badge badge--success">신청</span></td>
+              <td><span class="tag-product">청년</span>드림 전세대출</td>
+              <td>
+                <span class="applicant-tooltip">
+                  <a class="link-name applicant-tooltip__trigger" href="01-02_loans_detail.html">홍길동</a>
+                  <span class="applicant-tooltip__panel">
+                    <span class="applicant-tooltip__title">타사진행내역</span>
+                    <div class="applicant-tooltip__body">
+                      <p class="applicant-tooltip__line">
+                        <span class="applicant-tooltip__name">삼호저축</span><span class="applicant-tooltip__kind">(청년)</span><span> : </span><span class="applicant-tooltip__state">[부결]</span><span class="applicant-tooltip__rest">/[0만원]/[20251107]</span>
+                      </p>
+                      <p class="applicant-tooltip__line">
+                        <span class="applicant-tooltip__name">상플</span><span class="applicant-tooltip__kind">(청년300)</span><span> : </span><span class="applicant-tooltip__state">[부결]</span><span class="applicant-tooltip__rest">/[0만원]/[20251029]</span>
+                      </p>
+                    </div>
+                  </span>
+                </span>
+              </td>
+              <td>900101-1******</td>
+              <td class="u-num">50,000,000</td>
+              <td class="u-num">48,000,000</td>
+              <td class="u-center"><span class="badge badge--success">승인</span></td>
+              <td class="u-center">2026-04-22</td>
+              <td class="u-num">48,000,000</td>
+              <td class="u-num">4.50%</td>
+              <td class="u-center"><span class="badge badge--subtle">완료</span></td>
+              <td>-</td>
+              <td class="u-center"><button class="badge badge--info badge--memo" type="button" data-memo-open data-modal-target="#memoModal">메모</button></td>
+            </tr>
+            <tr>
+              <td>2026-04-23 09:02</td>
+              <td>판교지사</td>
+              <td>이담당</td>
+              <td class="u-center"><span class="badge badge--success">신청</span></td>
+              <td><span class="tag-product">직장인</span>신용대출 프리미엄</td>
+              <td>
+                <span class="applicant-tooltip">
+                  <a class="link-name applicant-tooltip__trigger" href="01-02_loans_detail.html">김영수</a>
+                  <span class="applicant-tooltip__panel">
+                    <span class="applicant-tooltip__title">타사진행내역</span>
+                    <div class="applicant-tooltip__body">
+                      <p class="applicant-tooltip__empty">-</p>
+                    </div>
+                  </span>
+                </span>
+              </td>
+              <td>850315-1******</td>
+              <td class="u-num">30,000,000</td>
+              <td class="u-num">-</td>
+              <td class="u-center"><span class="badge badge--info">검토중</span></td>
+              <td class="u-center">-</td>
+              <td class="u-num">-</td>
+              <td class="u-num">-</td>
+              <td class="u-center"><span class="badge badge--subtle">대기</span></td>
+              <td>-</td>
+              <td class="u-center">-</td>
+            </tr>
+            <tr>
+              <td>2026-04-21 14:48</td>
+              <td>부산지사</td>
+              <td>최담당</td>
+              <td class="u-center"><span class="badge badge--subtle">미신청</span></td>
+              <td><span class="tag-product">기타</span>사업자 운영자금</td>
+              <td>
+                <span class="applicant-tooltip">
+                  <a class="link-name applicant-tooltip__trigger" href="01-02_loans_detail.html">박미나</a>
+                  <span class="applicant-tooltip__panel">
+                    <span class="applicant-tooltip__title">타사진행내역</span>
+                    <div class="applicant-tooltip__body">
+                      <p class="applicant-tooltip__line">
+                        <span class="applicant-tooltip__name">삼호저축</span><span class="applicant-tooltip__kind">(청년)</span><span> : </span><span class="applicant-tooltip__state">[부결]</span><span class="applicant-tooltip__rest">/[0만원]/[20251107]</span>
+                      </p>
+                      <p class="applicant-tooltip__line">
+                        <span class="applicant-tooltip__name">상플</span><span class="applicant-tooltip__kind">(청년300)</span><span> : </span><span class="applicant-tooltip__state">[부결]</span><span class="applicant-tooltip__rest">/[0만원]/[20251029]</span>
+                      </p>
+                    </div>
+                  </span>
+                </span>
+              </td>
+              <td>780720-2******</td>
+              <td class="u-num">100,000,000</td>
+              <td class="u-num">0</td>
+              <td class="u-center"><span class="badge badge--error">반려</span></td>
+              <td class="u-center">2026-04-21</td>
+              <td class="u-num">-</td>
+              <td class="u-num">-</td>
+              <td class="u-center"><span class="badge badge--error">반려</span></td>
+              <td>신용등급 부족</td>
+              <td class="u-center"><button class="badge badge--info badge--memo" type="button" data-memo-open data-modal-target="#memoModal">메모</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 페이지네이션 -->
+      <nav class="pagination" aria-label="페이지 이동">
+        <button disabled>«</button>
+        <button disabled>‹</button>
+        <button class="is-active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>›</button>
+        <button>»</button>
+      </nav>
+
+    </section>
+  </main>
+</div>
+
+<div class="memo-modal" id="memoModal" aria-hidden="true">
+  <div class="memo-modal__panel" role="dialog" aria-modal="true" aria-labelledby="memoDialogTitle">
+    <div class="memo-modal__bar">
+      <span id="memoDialogTitle" class="memo-modal__bar-title">고객정보</span>
+      <button type="button" class="btn btn--outline memo-modal__close-top" data-memo-close aria-label="닫기">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="memo-meta-wrap">
+      <table class="memo-meta">
+        <tbody>
+          <tr>
+            <th>이름</th>
+            <td>박정현</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="memo-list-wrap">
+      <table class="memo-list">
+        <colgroup>
+          <col style="width: 25%;">
+          <col style="width: 15%;">
+          <col style="width: 15%;">
+          <col style="width: 45%;">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>등록일</th>
+            <th>처리자</th>
+            <th>상태</th>
+            <th>내용</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2026-05-08 17:25:28</td>
+            <td>안동메모</td>
+            <td class="u-center"><span class="memo-status memo-status--error">부결</span></td>
+            <td>[ : 안동메모 ] [거절(부결) CSS거절</td>
+          </tr>
+          <tr class="memo-highlight">
+            <td>2026-05-08 17:19:28</td>
+            <td>안동메모</td>
+            <td class="u-center"><span class="memo-status memo-status--send">전송</span></td>
+            <td>[ : 안동메모 ] [접수완료 ]</td>
+          </tr>
+          <tr>
+            <td>2026-05-08 17:17:28</td>
+            <td>안동메모</td>
+            <td class="u-center"><span class="memo-status memo-status--send">전송</span></td>
+            <td>[ : 안동메모 ] 0000접수완료 파일전송</td>
+          </tr>
+          <tr>
+            <td>2026-05-08 17:17:28</td>
+            <td>안동메모</td>
+            <td class="u-center"><span class="memo-status memo-status--none">-</span></td>
+            <td>[ : 안동메모 ] 접수완료</td>
+          </tr>
+          <tr>
+            <td>2026-05-08 17:17:27</td>
+            <td>안동메모</td>
+            <td class="u-center"><span class="memo-status memo-status--waiting">접수대기</span></td>
+            <td>[김웅 : 영통남] 금융사전송</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="memo-modal__actions">
+      <button type="button" class="btn btn--outline memo-modal__close" data-memo-close>닫기</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/applicant-tooltip.js"></script>
+<script src="js/memo-modal.js"></script>
+<script src="js/sidebar-render.js"></script>
+</body>
+</html>

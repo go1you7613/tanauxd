@@ -1,0 +1,178 @@
+/* 통계관리 — 일자별/상품별/지사별/모집인 통계 */
+
+.stats-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  margin-bottom: var(--space-16);
+}
+
+.stats-tabs__button,
+.stats-tabs__link {
+  height: 36px;
+  padding: 0 var(--space-16);
+  border: 1px solid var(--color-neutral-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-neutral-surface);
+  color: var(--color-text-primary);
+  font-size: var(--type-body-size);
+  font-weight: var(--type-accent-weight);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats-tabs__button:hover,
+.stats-tabs__link:hover {
+  background: var(--color-brand-subtle);
+}
+
+.stats-tabs__button.is-active,
+.stats-tabs__link.is-active {
+  background: var(--color-brand-primary);
+  border-color: var(--color-brand-primary);
+  color: #fff;
+}
+
+.stats-search-panel {
+  border: 1px solid var(--color-neutral-border);
+  border-radius: var(--radius-md);
+  background: var(--color-neutral-surface);
+  margin-bottom: var(--space-16);
+  overflow: hidden;
+}
+
+.stats-search-panel__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  padding: var(--space-12) var(--space-16);
+  border-bottom: 1px solid var(--color-neutral-border);
+  color: var(--color-text-strong);
+  font-size: var(--type-section-size);
+  font-weight: var(--type-section-weight);
+}
+
+.stats-search-panel__title svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-brand-primary);
+}
+
+.stats-search-panel__body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-12);
+  padding: var(--space-16);
+}
+
+.stats-search-panel .field {
+  flex: 0 1 168px;
+  min-width: 140px;
+}
+
+.stats-search-panel .field--wide {
+  flex-basis: 240px;
+}
+
+.stats-date-range {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.stats-date-range .input {
+  width: 136px;
+}
+
+.stats-search-panel__actions {
+  margin-left: auto;
+  display: flex;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.stats-table-wrap {
+  overflow-x: auto;
+  background: var(--color-neutral-surface);
+  border: 1px solid var(--color-neutral-border);
+  border-radius: var(--radius-md);
+}
+
+.stats-table {
+  width: 100%;
+  min-width: 1080px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: var(--type-body-size);
+}
+
+.stats-table th,
+.stats-table td {
+  height: var(--row-height);
+  padding: var(--space-8);
+  border-right: 1px solid var(--color-neutral-border);
+  border-bottom: 1px solid var(--color-neutral-border);
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.stats-table th:last-child,
+.stats-table td:last-child {
+  border-right: 0;
+}
+
+.stats-table thead th {
+  background: var(--color-neutral-background);
+  color: var(--color-text-strong);
+  font-weight: var(--type-table-header-weight);
+}
+
+.stats-table tbody tr:nth-child(even) td {
+  background: var(--color-neutral-background);
+}
+
+.stats-table tbody tr.stats-table__total td {
+  background: var(--color-brand-subtle);
+  color: var(--color-text-strong);
+  font-weight: 700;
+}
+
+.stats-table .u-num {
+  text-align: right;
+}
+
+.stats-table .u-strong {
+  font-weight: 700;
+}
+
+.stats-table .u-reject {
+  color: var(--color-status-error);
+}
+
+.stats-table .u-approve {
+  color: #001eff;
+  font-weight: 700;
+}
+
+.stats-table .u-linkish {
+  color: var(--color-status-info);
+  font-weight: var(--type-accent-weight);
+}
+
+.stats-table .stats-name {
+  text-align: left;
+  white-space: normal;
+}
+
+.stats-caption {
+  margin: var(--space-12) 0 0;
+  color: var(--color-text-secondary);
+  font-size: var(--type-table-header-size);
+}
+
+.stats-caption strong {
+  color: var(--color-text-primary);
+}

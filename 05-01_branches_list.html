@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지사관리 | DAESINLOAN</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/branches.css">
+</head>
+<body>
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <main class="app__main">
+    <header class="page-header">
+      <h1>지사관리</h1>
+      <div class="branch-page-actions">
+        <a href="05-03_branches_register.html" class="btn btn--primary">등록</a>
+      </div>
+    </header>
+
+    <section class="page-body">
+      <form class="branch-filter-bar" onsubmit="return false;">
+        <div class="field">
+          <label for="bf-name">지사명</label>
+          <input id="bf-name" class="input" type="text">
+        </div>
+        <div class="field">
+          <label for="bf-status">사용여부</label>
+          <select id="bf-status" class="select">
+            <option>전체</option>
+            <option>사용</option>
+            <option>사용안함</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="bf-id">아이디</label>
+          <input id="bf-id" class="input" type="text">
+        </div>
+        <div class="branch-filter-bar__actions">
+          <button type="submit" class="btn btn--primary">검색실행</button>
+          <button type="reset" class="btn btn--outline">검색취소</button>
+        </div>
+      </form>
+
+      <div class="table-wrap branches-table-wrap">
+        <table class="table branches-table">
+          <thead>
+            <tr>
+              <th class="branches-table__col-no">번호</th>
+              <th class="branches-table__col-name">지사명</th>
+              <th class="branches-table__col-code">지사코드</th>
+              <th class="branches-table__col-manager">담당자 명</th>
+              <th class="branches-table__col-id">아이디</th>
+              <th class="branches-table__col-auth">인증코드</th>
+              <th class="branches-table__col-role">권한</th>
+              <th class="branches-table__col-status">상품숨김</th>
+              <th class="branches-table__col-fee">상품별 수수료</th>
+              <th class="branches-table__col-recruiter">모집인 명</th>
+              <th class="branches-table__col-action">삭제</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>80</td>
+              <td><a class="branch-name-link" href="05-02_branches_detail.html">더블유[3]</a></td>
+              <td>003000000</td>
+              <td>더블유</td>
+              <td>daesinloan</td>
+              <td>123456</td>
+              <td><span class="branch-role branch-role--root">총괄관리자</span></td>
+              <td><span class="branch-state--ok">정상</span></td>
+              <td><a class="branch-name-link" href="#">상품별 수당</a></td>
+              <td><a class="branch-name-link" href="#">더블유</a></td>
+              <td><button type="button" class="btn--row-delete">삭제</button></td>
+            </tr>
+            <tr>
+              <td>79</td>
+              <td><a class="branch-name-link" href="05-02_branches_detail.html">프라[4]</a></td>
+              <td>004000000</td>
+              <td>프라</td>
+              <td>pra</td>
+              <td>234567</td>
+              <td><span class="branch-role branch-role--finance">금융사</span></td>
+              <td><span class="branch-state--ok">정상</span></td>
+              <td><a class="branch-name-link" href="#">상품별 수당</a></td>
+              <td><a class="branch-name-link" href="#">김경애</a></td>
+              <td><button type="button" class="btn--row-delete">삭제</button></td>
+            </tr>
+            <tr>
+              <td>78</td>
+              <td><a class="branch-name-link" href="05-02_branches_detail.html">본사[6]</a></td>
+              <td>006000000</td>
+              <td>본사</td>
+              <td>bonsa</td>
+              <td>345678</td>
+              <td><span class="branch-role">지사</span></td>
+              <td><span class="branch-state--danger">숨김</span></td>
+              <td><a class="branch-name-link" href="#">상품별 수당</a></td>
+              <td><a class="branch-name-link" href="#">김선민</a></td>
+              <td><button type="button" class="btn--row-delete">삭제</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="js/sidebar-render.js"></script>
+</body>
+</html>

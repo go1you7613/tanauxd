@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>보안관리 | DAESINLOAN</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/system.css">
+</head>
+<body>
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <main class="app__main">
+    <header class="page-header">
+      <h1>보안관리</h1>
+      <div class="system-page-actions">
+        <button type="button" class="btn btn--primary">저장</button>
+      </div>
+    </header>
+
+    <section class="page-body">
+      <div class="system-layout system-layout--single">
+        <form class="system-panel" onsubmit="return false;">
+          <div class="system-panel__header">
+            <h2>IP 접근 제어</h2>
+          </div>
+          <table class="system-form-grid">
+            <tbody>
+              <tr>
+                <th>접근 제어</th>
+                <td>
+                  <div class="system-inline-options">
+                    <label><input type="radio" name="ip-control" checked> 사용</label>
+                    <label><input type="radio" name="ip-control"> 사용안함</label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>지사 등록 IP</th>
+                <td>
+                  <div class="system-inline-options">
+                    <label><input type="radio" name="branch-ip-mode" checked> 적용</label>
+                    <label><input type="radio" name="branch-ip-mode"> 적용안함</label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><label for="security-default">기본 정책</label></th>
+                <td>
+                  <select id="security-default" class="select">
+                    <option>등록된 IP만 허용</option>
+                    <option>전체 허용 후 등록 IP 차단</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th>예외 지사</th>
+                <td>
+                  <table class="security-exception-table">
+                    <thead>
+                      <tr>
+                        <th>예외</th>
+                        <th>지사명</th>
+                        <th>지사코드</th>
+                        <th>등록 IP</th>
+                        <th>처리상태</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><input type="checkbox" checked aria-label="더블유 예외 적용"></td>
+                        <td>더블유[3]</td>
+                        <td>003000000</td>
+                        <td>115.138.143.45</td>
+                        <td><span class="badge badge--info">접근제어 예외</span></td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" checked aria-label="프라 예외 적용"></td>
+                        <td>프라[4]</td>
+                        <td>004000000</td>
+                        <td>110.8.252.28</td>
+                        <td><span class="badge badge--info">접근제어 예외</span></td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox" aria-label="본사 예외 적용"></td>
+                        <td>본사[6]</td>
+                        <td>006000000</td>
+                        <td>125.142.110.64</td>
+                        <td><span class="badge badge--subtle">IP 접근제어 적용</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <th><label for="security-memo">관리 메모</label></th>
+                <td><textarea id="security-memo" class="system-textarea">체크한 지사는 지사별 등록 IP 기반의 접근제어에서 예외 처리합니다.</textarea></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="system-actions">
+            <button type="submit" class="btn btn--primary">저장</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="js/sidebar-render.js"></script>
+</body>
+</html>

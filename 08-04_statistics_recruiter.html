@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모집인 통계 | DAESINLOAN</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/statistics.css">
+</head>
+<body>
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <main class="app__main">
+    <header class="page-header"><h1>통계관리</h1></header>
+    <section class="page-body">
+      <nav class="stats-tabs" aria-label="통계 메뉴">
+        <a class="stats-tabs__link" href="08-01_statistics_daily.html">일자별 통계</a>
+        <a class="stats-tabs__link" href="08-02_statistics_product.html">상품별 통계</a>
+        <a class="stats-tabs__link" href="08-03_statistics_branch.html">지사별 통계</a>
+        <a class="stats-tabs__link is-active" href="08-04_statistics_recruiter.html">모집인 통계</a>
+      </nav>
+
+      <form class="stats-search-panel" onsubmit="return false;">
+        <div class="stats-search-panel__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>검색메뉴</div>
+        <div class="stats-search-panel__body">
+          <div class="field"><label for="stat-lender">금융사</label><select id="stat-lender" class="select"><option>-금융사-</option><option>프라</option><option>온누리AG</option></select></div>
+          <div class="field"><label for="stat-recruiter">모집인</label><input id="stat-recruiter" class="input" type="text"></div>
+          <div class="field"><label for="stat-use">사용여부</label><select id="stat-use" class="select"><option>사용여부</option><option>예</option><option>아니오</option></select></div>
+          <div class="field"><label>등록일</label><div class="stats-date-range"><input class="input" type="text"><span>~</span><input class="input" type="text"></div></div>
+          <div class="stats-search-panel__actions"><button type="submit" class="btn btn--primary">검색실행</button><button type="reset" class="btn btn--outline">검색취소</button></div>
+        </div>
+      </form>
+
+      <div class="stats-table-wrap">
+        <table class="stats-table">
+          <thead>
+            <tr><th>번호</th><th>금융사</th><th>지사</th><th>승인금액</th><th>모집인</th><th>모집인번호</th><th>전화번호</th><th>등록일</th><th>사용유무</th></tr>
+          </thead>
+          <tbody>
+            <tr class="stats-table__total"><td>합계</td><td>-</td><td>-</td><td class="u-num u-approve">19,800만원</td><td>11명</td><td>-</td><td>-</td><td>-</td><td>사용 9명</td></tr>
+            <tr><td>39</td><td>-</td><td>화이트[]</td><td class="u-num u-approve">0만원</td><td>김선민</td><td>2-510-0010</td><td>--</td><td>20190103</td><td>예</td></tr>
+            <tr><td>38</td><td>-</td><td>화이트[]</td><td class="u-num u-approve">0만원</td><td>김선민(삼호)</td><td>2-510-0010</td><td class="u-strong">11-1111-1111</td><td>20190301</td><td>예</td></tr>
+            <tr><td>37</td><td>프라</td><td>프라[]</td><td class="u-num u-approve">0만원</td><td>김경애</td><td>2-459-0301</td><td class="u-strong">11-111-1111</td><td>20190307</td><td>아니오</td></tr>
+            <tr><td>34</td><td>프라</td><td>프라[jsm]</td><td class="u-num u-approve">3,700만원</td><td>김종원(한성)</td><td>1000014544</td><td>--</td><td>20190329</td><td>예</td></tr>
+            <tr><td>31</td><td>-</td><td>[jsm]</td><td class="u-num u-approve">16,100만원</td><td>김성수(삼호)</td><td>10-00014543</td><td>--</td><td>00000000</td><td>예</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="js/sidebar-render.js"></script>
+</body>
+</html>

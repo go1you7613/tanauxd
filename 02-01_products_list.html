@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상품관리 | DAESINLOAN</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/products-list.css">
+</head>
+<body>
+<div class="app">
+
+  <div id="sidebar-root"></div>
+
+  <main class="app__main">
+    <header class="page-header">
+      <h1>상품관리</h1>
+    </header>
+
+    <section class="page-body">
+
+      <form class="product-filter-bar" onsubmit="return false;">
+        <div class="field">
+          <label for="pf-lender">대출사</label>
+          <select id="pf-lender" class="select">
+            <option>-대출사선택-</option>
+            <option>온누리AG</option>
+            <option>상품AG</option>
+            <option>삼호저축</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="pf-progress-filter">진행</label>
+          <select id="pf-progress-filter" class="select">
+            <option>-진행선택-</option>
+            <option>예</option>
+            <option>아니오</option>
+          </select>
+        </div>
+        <div class="field field--combo">
+          <label for="pf-keyword">검색</label>
+          <div class="field__combo">
+            <input id="pf-keyword" class="input input--text-sm" type="text" placeholder="키워드">
+            <select id="pf-keyword-type" class="select input--text-sm" aria-label="검색 구분">
+              <option>선택</option>
+              <option>상품명</option>
+              <option>상품코드</option>
+            </select>
+          </div>
+        </div>
+        <div class="product-filter-bar__actions">
+          <button type="submit" class="btn btn--primary">검색실행</button>
+          <button type="reset" class="btn btn--outline btn--search-cancel">검색취소</button>
+        </div>
+      </form>
+
+      <div class="table-wrap products-table-wrap">
+        <table class="table products-table">
+          <thead>
+            <tr>
+              <th class="products-table__col-check u-center"><input type="checkbox" aria-label="전체 선택"></th>
+              <th class="products-table__col-no">NO</th>
+              <th class="products-table__col-lender">대출사명</th>
+              <th class="products-table__col-name">상품명</th>
+              <th class="products-table__col-code">상품코드</th>
+              <th class="products-table__col-bank">은행코드</th>
+              <th class="products-table__col-type">상품구분</th>
+              <th class="products-table__col-progress">진행여부</th>
+              <th class="products-table__col-consent">동의서</th>
+              <th class="products-table__col-condition">조건표</th>
+              <th class="products-table__col-action">삭제</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="u-center"><input type="checkbox" aria-label="행 선택"></td>
+              <td class="u-center">1</td>
+              <td>온누리AG [113]</td>
+              <td>
+                <a class="link-name product-row-name" href="02-02_products_detail.html?code=414"><span class="product-name-tag product-name-tag--red">직장인</span> 신용대출 일반</a>
+              </td>
+              <td class="u-center">[414]</td>
+              <td>1358</td>
+              <td>※회파복※</td>
+              <td class="u-center">예</td>
+              <td>260129</td>
+              <td>-</td>
+              <td class="u-center"><button type="button" class="btn--row-delete">삭제</button></td>
+            </tr>
+            <tr>
+              <td class="u-center"><input type="checkbox" aria-label="행 선택"></td>
+              <td class="u-center">2</td>
+              <td>상품AG [115]</td>
+              <td>
+                <a class="link-name product-row-name" href="02-02_products_detail.html?code=415"><span class="product-name-tag product-name-tag--blue">군미필</span> 장병 급여론</a>
+              </td>
+              <td class="u-center">[415]</td>
+              <td>1359</td>
+              <td>※청년※</td>
+              <td class="u-center">아니오</td>
+              <td>-</td>
+              <td>-</td>
+              <td class="u-center"><button type="button" class="btn--row-delete">삭제</button></td>
+            </tr>
+            <tr>
+              <td class="u-center"><input type="checkbox" aria-label="행 선택"></td>
+              <td class="u-center">3</td>
+              <td>온누리AG [113]</td>
+              <td>
+                <a class="link-name product-row-name" href="02-02_products_detail.html?code=416"><span class="product-name-tag product-name-tag--red">직장인</span> 드림 전세 일반</a>
+              </td>
+              <td class="u-center">[416]</td>
+              <td>1360</td>
+              <td>※연계상품※</td>
+              <td class="u-center">예</td>
+              <td>260201</td>
+              <td>-</td>
+              <td class="u-center"><button type="button" class="btn--row-delete">삭제</button></td>
+            </tr>
+            <tr>
+              <td class="u-center"><input type="checkbox" aria-label="행 선택"></td>
+              <td class="u-center">4</td>
+              <td>삼호저축</td>
+              <td>
+                <a class="link-name product-row-name" href="02-02_products_detail.html?code=417"><span class="product-name-tag product-name-tag--blue">군미필</span> 간편 신용</a>
+              </td>
+              <td class="u-center">[417]</td>
+              <td>-</td>
+              <td>※오토※</td>
+              <td class="u-center">예</td>
+              <td>-</td>
+              <td>-</td>
+              <td class="u-center"><button type="button" class="btn--row-delete">삭제</button></td>
+            </tr>
+            <tr>
+              <td class="u-center"><input type="checkbox" aria-label="행 선택"></td>
+              <td class="u-center">5</td>
+              <td>상품AG [114]</td>
+              <td>
+                <a class="link-name product-row-name" href="02-02_products_detail.html?code=418">사업자 운영자금 특별</a>
+              </td>
+              <td class="u-center">[418]</td>
+              <td>9001</td>
+              <td>※청년※</td>
+              <td class="u-center">아니오</td>
+              <td>-</td>
+              <td>-</td>
+              <td class="u-center"><button type="button" class="btn--row-delete">삭제</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="products-footer">
+        <div class="products-footer__info">전체 <strong>166</strong> 개</div>
+        <nav class="pagination" aria-label="페이지 이동">
+          <button disabled>«</button>
+          <button disabled>‹</button>
+          <button class="is-active">1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button>›</button>
+          <button>»</button>
+        </nav>
+        <div class="products-footer__pages">Total 9 Pages</div>
+      </div>
+
+    </section>
+  </main>
+</div>
+<script src="js/sidebar-render.js"></script>
+</body>
+</html>

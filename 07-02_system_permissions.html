@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>권한관리 | DAESINLOAN</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/system.css">
+</head>
+<body>
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <main class="app__main">
+    <header class="page-header">
+      <h1>권한관리</h1>
+      <div class="system-page-actions">
+        <button type="button" class="btn btn--primary">저장</button>
+      </div>
+    </header>
+
+    <section class="page-body">
+      <form class="system-filter-bar" onsubmit="return false;">
+        <div class="field">
+          <label for="perm-role">권한</label>
+          <select id="perm-role" class="select">
+            <option selected>슈퍼관리자</option>
+            <option>관리자</option>
+            <option>지사</option>
+            <option>금융사</option>
+            <option>대출사</option>
+          </select>
+        </div>
+        <div class="system-filter-bar__actions">
+          <button type="submit" class="btn btn--primary">조회</button>
+        </div>
+      </form>
+
+      <div class="table-wrap system-table-wrap">
+        <table class="table system-table permission-matrix">
+          <thead>
+            <tr>
+              <th>메뉴</th>
+              <th>조회</th>
+              <th>등록</th>
+              <th>수정</th>
+              <th>삭제</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>대출진행목록</td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>공지사항</td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox" checked></td>
+            </tr>
+            <tr>
+              <td>상품관리</td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox" checked></td>
+            </tr>
+            <tr>
+              <td>통계관리</td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>회원관리</td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>지사관리</td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>모집인 관리</td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>시스템 관리</td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox" checked></td>
+            </tr>
+            <tr>
+              <td>코드관리</td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>권한관리</td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>접속자관리</td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>보안관리</td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox"></td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+              <td>관리자 관리</td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox" checked></td>
+              <td><input type="checkbox" checked></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="js/sidebar-render.js"></script>
+</body>
+</html>

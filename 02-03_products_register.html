@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상품등록 | DAESINLOAN</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css">
+  <link rel="stylesheet" href="css/products-detail.css">
+</head>
+<body>
+<div class="app">
+
+  <div id="sidebar-root"></div>
+
+  <main class="app__main">
+    <header class="page-header">
+      <h1>상품관리</h1>
+      <div class="page-header__product-actions" style="display:flex; gap: var(--space-8);">
+        <a href="02-01_products_list.html" class="btn btn--outline">목록으로</a>
+      </div>
+    </header>
+
+    <section class="page-body">
+      <div class="product-detail-shell">
+
+        <form class="product-detail-edit product-detail-form" action="#" method="post">
+          <table class="product-detail-form__grid">
+            <tbody>
+              <tr>
+                <th scope="row"><label for="pd-name">상품명</label></th>
+                <td><input id="pd-name" class="input" type="text"></td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="pd-bank-code">은행코드</label></th>
+                <td><input id="pd-bank-code" class="input" type="text" inputmode="numeric"></td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="pd-category">구분</label></th>
+                <td>
+                  <select id="pd-category" class="select">
+                    <option value="" selected>선택</option>
+                    <option>※오토※</option>
+                    <option>※회파복※</option>
+                    <option>※청년※</option>
+                    <option>※연계상품※</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="pd-lender">대출사</label></th>
+                <td>
+                  <select id="pd-lender" class="select">
+                    <option value="" selected>선택</option>
+                    <option>온누리AG [113]</option>
+                    <option>상품AG [114]</option>
+                    <option>삼호저축</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">진행여부</th>
+                <td>
+                  <div class="radio-row">
+                    <label><input type="radio" name="pd-progress" value="on" checked> 진행</label>
+                    <label><input type="radio" name="pd-progress" value="off"> 중지</label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="pd-consent-file">동의서</label></th>
+                <td>
+                  <input id="pd-consent-file" class="input" type="file" aria-describedby="pd-consent-hint">
+                  <p id="pd-consent-hint" class="product-detail-form__file-hint">선택된 파일 없음</p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="pd-condition-file">조건표</label></th>
+                <td>
+                  <input id="pd-condition-file" class="input" type="file" aria-describedby="pd-condition-hint">
+                  <p id="pd-condition-hint" class="product-detail-form__file-hint">선택된 파일 없음</p>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="pd-url-counsel">상담신청url</label></th>
+                <td><input id="pd-url-counsel" class="input" type="url" placeholder="https://"></td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="pd-url-auth">본인인증url</label></th>
+                <td><input id="pd-url-auth" class="input" type="url" placeholder="https://"></td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="pd-url-sign">전자서명url</label></th>
+                <td><input id="pd-url-sign" class="input" type="url" placeholder="https://"></td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="pd-line-memo1">한줄메모1</label></th>
+                <td><input id="pd-line-memo1" class="input" type="text"></td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="pd-line-memo2">한줄메모2</label></th>
+                <td><input id="pd-line-memo2" class="input" type="text"></td>
+              </tr>
+              <tr>
+                <th scope="row">메모</th>
+                <td>
+                  <div class="memo-quill-wrap">
+                    <input type="hidden" name="memo_html" id="pd-memo-html" value="">
+                    <div id="pd-quill-editor" class="memo-quill-editor" role="textbox" aria-multiline="true" aria-label="메모 에디터"></div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="product-detail-form__actions product-detail-form__actions--edit">
+            <button type="submit" class="btn btn--primary">등록</button>
+            <a href="02-01_products_list.html" class="btn btn--outline">취소</a>
+          </div>
+        </form>
+
+      </div>
+    </section>
+  </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+<script src="js/products-quill-memo.js"></script>
+<script src="js/products-register.js"></script>
+<script src="js/sidebar-render.js"></script>
+</body>
+</html>

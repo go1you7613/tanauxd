@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>관리자 관리 | DAESINLOAN</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/system.css">
+</head>
+<body>
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <main class="app__main">
+    <header class="page-header">
+      <h1>관리자 관리</h1>
+      <div class="system-page-actions">
+        <button type="button" class="btn btn--primary" data-admin-modal-open="create">등록</button>
+      </div>
+    </header>
+
+    <section class="page-body">
+      <div class="system-layout system-layout--single">
+        <div class="system-stack">
+          <form class="system-filter-bar" onsubmit="return false;">
+            <div class="field">
+              <label for="admin-name">관리자명</label>
+              <input id="admin-name" class="input" type="text">
+            </div>
+            <div class="field">
+              <label for="admin-role">권한</label>
+              <select id="admin-role" class="select">
+                <option>전체</option>
+                <option>총괄관리자</option>
+                <option>관리자</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="admin-use">사용여부</label>
+              <select id="admin-use" class="select">
+                <option>전체</option>
+                <option>사용</option>
+                <option>사용안함</option>
+              </select>
+            </div>
+            <div class="system-filter-bar__actions">
+              <button type="submit" class="btn btn--primary">검색실행</button>
+              <button type="reset" class="btn btn--outline">검색취소</button>
+            </div>
+          </form>
+
+          <div class="table-wrap system-table-wrap">
+            <table class="table system-table">
+              <thead>
+                <tr>
+                  <th class="system-table__col-no">번호</th>
+                  <th class="system-table__col-name">관리자명</th>
+                  <th class="system-table__col-code">아이디</th>
+                  <th class="system-table__col-type">권한</th>
+                  <th class="system-table__col-status">사용여부</th>
+                  <th class="system-table__col-date">등록일</th>
+                  <th class="system-table__col-action">관리</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>김관리</td>
+                  <td>admin01</td>
+                  <td>총괄관리자</td>
+                  <td><span class="badge badge--success">사용</span></td>
+                  <td>2026-05-09</td>
+                  <td><button type="button" class="btn--row-edit" data-admin-modal-open="edit">수정</button></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>이운영</td>
+                  <td>manager01</td>
+                  <td>관리자</td>
+                  <td><span class="badge badge--success">사용</span></td>
+                  <td>2026-05-08</td>
+                  <td><button type="button" class="btn--row-edit" data-admin-modal-open="edit">수정</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+</div>
+<div class="system-modal" id="admin-modal" aria-hidden="true">
+  <div class="system-modal__backdrop" data-admin-modal-close></div>
+  <form class="system-modal__dialog" onsubmit="return false;" role="dialog" aria-modal="true" aria-labelledby="admin-modal-title">
+    <div class="system-modal__header">
+      <h2 id="admin-modal-title">관리자 등록/수정</h2>
+      <button type="button" class="system-modal__close" data-admin-modal-close aria-label="닫기">×</button>
+    </div>
+    <table class="system-form-grid">
+      <tbody>
+        <tr>
+          <th><label for="admin-form-name">관리자명</label></th>
+          <td><input id="admin-form-name" class="input" type="text"></td>
+        </tr>
+        <tr>
+          <th><label for="admin-form-id">아이디</label></th>
+          <td><input id="admin-form-id" class="input" type="text" pattern="[A-Za-z0-9]+"></td>
+        </tr>
+        <tr>
+          <th><label for="admin-form-role">권한</label></th>
+          <td>
+            <select id="admin-form-role" class="select">
+              <option>총괄관리자</option>
+              <option>관리자</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="admin-form-phone">전화번호</label></th>
+          <td><input id="admin-form-phone" class="input" type="tel"></td>
+        </tr>
+        <tr>
+          <th>사용여부</th>
+          <td>
+            <div class="system-inline-options">
+              <label><input type="radio" name="admin-use-flag" value="사용" checked> 사용</label>
+              <label><input type="radio" name="admin-use-flag" value="사용안함"> 사용안함</label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="system-actions">
+      <button type="submit" class="btn btn--primary">저장</button>
+      <button type="button" class="btn btn--outline">비밀번호 초기화</button>
+    </div>
+  </form>
+</div>
+<script src="js/system-admins-modal.js"></script>
+<script src="js/sidebar-render.js"></script>
+</body>
+</html>

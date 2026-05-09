@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>대출진행목록 - 상세 | DAESINLOAN</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/detail.css">
+</head>
+<body>
+<div class="app">
+
+  <!-- ── 사이드바 ── -->
+  <div id="sidebar-root"></div>
+
+  <!-- ── 본문 ── -->
+  <main class="app__main">
+    <header class="page-header">
+      <h1>대출진행목록</h1>
+      <div style="display:flex; gap: var(--space-8);">
+        <a href="01-01_loans_list.html" class="btn btn--outline">목록으로</a>
+        <button class="btn btn--primary">저장</button>
+      </div>
+    </header>
+
+    <section class="page-body">
+      <div class="detail-layout">
+
+        <!-- ══ 왼쪽 메인 컬럼 ══ -->
+        <div class="detail-layout__main">
+
+          <!-- 1. 상품정보 (단일 상품) -->
+          <div class="detail-card">
+            <h2 class="detail-card__title">상품정보</h2>
+            <article class="product-highlight" aria-label="선택된 대출 상품">
+              <div class="product-highlight__body">
+                <span class="product-highlight__badge product-highlight__badge--youth">청년</span>
+                <div class="product-highlight__name-row">
+                  <h3 class="product-highlight__name">대한저축(청년4대미가입)</h3>
+                  <div class="product-highlight__actions" aria-label="상품 관련 기능">
+                    <button type="button" class="product-highlight__action-btn product-highlight__action-btn--primary">상품상세정보</button>
+                    <button type="button" class="product-highlight__action-btn">조견표</button>
+                    <button type="button" class="product-highlight__action-btn">동의서</button>
+                    <button type="button" class="product-highlight__action-btn">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M14 3h7v7"/><path d="M10 14L21 3"/><path d="M21 14v7h-7"/><path d="M3 10V3h7"/><path d="M3 3l7 7"/><path d="M3 21l7-7"/><path d="M14 21h7v-7"/></svg>
+                      본인인증
+                    </button>
+                    <button type="button" class="product-highlight__action-btn">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M14 3h7v7"/><path d="M10 14L21 3"/><path d="M21 14v7h-7"/><path d="M3 10V3h7"/><path d="M3 3l7 7"/><path d="M3 21l7-7"/><path d="M14 21h7v-7"/></svg>
+                      전자서명
+                    </button>
+                  </div>
+                </div>
+                <dl class="product-highlight__meta">
+                  <div class="product-highlight__meta-row">
+                    <p class="product-highlight__meta-note product-highlight__meta-note--highlight">[신용,채무통합,사잇돌조회/4대가입(재직3 납부2회)/법인대표(4대가입 필수]</p>
+                    <p class="product-highlight__meta-note product-highlight__meta-note--default">[서류첨부후(컬러신분증/변제현황캡쳐본必)/기타사항작성/후인증(금융사 안내)]</p>
+                  </div>
+                  <div class="product-highlight__meta-row product-highlight__meta-row--divider">
+                    <dt>모집인</dt>
+                    <dd><span class="badge badge--info">김경숙</span></dd>
+                  </div>
+                </dl>
+              </div>
+            </article>
+          </div>
+
+          <!-- 2. 고객정보 -->
+          <div class="detail-card">
+            <h2 class="detail-card__title">고객정보</h2>
+            <table class="detail-table">
+              <tbody>
+                <tr>
+                  <th>이름</th>
+                  <td><span class="detail-value">홍길동</span></td>
+                  <th>주민번호</th>
+                  <td>
+                    <div class="detail-field-group">
+                      <span class="detail-value">990726</span>
+                      <span class="sep">~</span>
+                      <span class="detail-value" style="min-width:40px; text-align:center;">2</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>휴대폰</th>
+                  <td>
+                    <div class="detail-field-group">
+                      <span class="detail-value" style="min-width:52px; text-align:center;">010</span>
+                      <span class="sep">-</span>
+                      <span class="detail-value" style="min-width:60px; text-align:center;">3333</span>
+                      <span class="sep">-</span>
+                      <span class="detail-value" style="min-width:60px; text-align:center;">5555</span>
+                    </div>
+                  </td>
+                  <th>이메일 주소</th>
+                  <td><span class="detail-value" style="min-width:180px;">jihye5863@naver.com</span></td>
+                </tr>
+                <tr>
+                  <th>신청금액</th>
+                  <td>
+                    <div class="detail-field-group">
+                      <span class="detail-value">1,000</span>
+                      <span>만원</span>
+                    </div>
+                  </td>
+                  <th>거래희망은행</th>
+                  <td><span class="detail-value" style="min-width:180px;">기업은행</span></td>
+                </tr>
+                <tr>
+                  <th>현 거주지</th>
+                  <td colspan="3">
+                    <div class="detail-address">
+                      <div class="detail-address-row">
+                        <span class="detail-value" style="min-width:80px; text-align:center;">15176</span>
+                      </div>
+                      <div class="detail-address-row">
+                        <span class="detail-value" style="min-width:320px;">경기 안산시 단원구 광덕대로 145, (고잔동, 강희그랜드오피스텔) 724호</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>등본상 주소</th>
+                  <td colspan="3">
+                    <div class="detail-address">
+                      <div class="detail-address-row">
+                        <span class="detail-value" style="min-width:80px; text-align:center;">15176</span>
+                        <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:#343a40;">
+                          <input type="checkbox" checked disabled> 현 거주지 주소와 동일
+                        </label>
+                      </div>
+                      <div class="detail-address-row">
+                        <span class="detail-value" style="min-width:320px;">경기 안산시 단원구 광덕대로 145, (고잔동, 강희그랜드오피스텔) 724호</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>주거종류</th>
+                  <td><span class="detail-value" style="min-width:180px;">오피스텔</span></td>
+                  <th>소유구분</th>
+                  <td><span class="detail-value" style="min-width:180px;">전세</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 3. 소득 정보 -->
+          <div class="detail-card">
+            <h2 class="detail-card__title">소득 정보</h2>
+            <table class="detail-table">
+              <tbody>
+                <tr>
+                  <th>직업구분</th>
+                  <td><span class="detail-value" style="min-width:180px;">직장인</span></td>
+                  <th>직장명/사업장명</th>
+                  <td><span class="detail-value" style="min-width:180px;">(주)대신엘앤비</span></td>
+                </tr>
+                <tr>
+                  <th>입사일자</th>
+                  <td><span class="detail-value" style="min-width:180px;">2024-02-11</span></td>
+                  <th>연간소득</th>
+                  <td>
+                    <div class="detail-field-group">
+                      <span class="detail-value">3,000</span>
+                      <span>만원</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>병역사항</th>
+                  <td><span class="detail-value" style="min-width:180px;">군필</span></td>
+                  <th>급여일</th>
+                  <td>
+                    <div class="detail-field-group">
+                      <span class="detail-value" style="min-width:60px; text-align:center;">11</span>
+                      <span>일</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>직장주소</th>
+                  <td colspan="3">
+                    <div class="detail-address">
+                      <div class="detail-address-row">
+                        <span class="detail-value" style="min-width:80px; text-align:center;">15176</span>
+                      </div>
+                      <div class="detail-address-row">
+                        <span class="detail-value" style="min-width:320px;">경기 안산시 단원구 광덕대로 145, (고잔동, 강희그랜드오피스텔) 724호</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 4. 접촉방법(대부상품) -->
+          <div class="detail-card">
+            <h2 class="detail-card__title">접촉방법(대부상품)</h2>
+            <table class="detail-table">
+              <tbody>
+                <tr>
+                  <th>접촉방법</th>
+                  <td colspan="3">
+                    <div class="detail-field-group">
+                      <span class="detail-value" style="min-width:220px;">고객이 먼저 중개인에게 연락</span>
+                      <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:#343a40;">
+                        <input type="checkbox" checked disabled> 넘버원 적법 사용 시
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>작성일자</th>
+                  <td><span class="detail-value" style="min-width:180px;">2024-02-11</span></td>
+                  <th>대표자</th>
+                  <td><span class="detail-value" style="min-width:180px;">주현</span></td>
+                </tr>
+                <tr>
+                  <th>담당자</th>
+                  <td><span class="detail-value" style="min-width:180px;">정선우</span></td>
+                  <th>중개인 접촉 경로</th>
+                  <td><span class="detail-value" style="min-width:180px;">인터넷광고(홈페이지 등 연락처 남김)</span></td>
+                </tr>
+                <tr>
+                  <th style="white-space:normal; line-height:1.4;">중개인 접촉 경로<br>상세 정보</th>
+                  <td colspan="3">
+                    <div class="detail-address">
+                      <span class="detail-value" style="min-width:320px;">홍보전단지</span>
+                      <span style="font-size:12px; color:var(--color-text-secondary);">※ 중개인 연락처를 알게된 경로가 기타인 경우 기록(필수)</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 5. 기타사항 -->
+          <div class="detail-card">
+            <h2 class="detail-card__title">기타사항</h2>
+            <table class="detail-table">
+              <tbody>
+                <tr>
+                  <th>기타사항 입력</th>
+                  <td>
+                    <textarea class="detail-textarea" readonly placeholder="기타사항 내용을 텍스트로 입력"></textarea>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div><!-- /detail-layout__main -->
+
+        <!-- ══ 오른쪽 사이드 패널 ══ -->
+        <div class="detail-layout__side">
+
+          <!-- 대출접수 카드 -->
+          <div class="detail-card">
+            <h2 class="detail-card__title">대출접수</h2>
+
+            <table class="side-table">
+              <tbody>
+                <tr>
+                  <th>제휴사</th>
+                  <td><span class="detail-value" style="width:100%; display:block;">KUMKANG</span></td>
+                </tr>
+                <tr>
+                  <th>등록일자</th>
+                  <td><span style="font-size:13px; color:#495057;">2026-03-27 16:20:52</span></td>
+                </tr>
+                <tr>
+                  <th>모집인 선택</th>
+                  <td><span class="detail-value" style="width:100%; display:block;">김성수(삼호)</span></td>
+                </tr>
+                <tr>
+                  <th>모집인 번호</th>
+                  <td><span class="detail-value" style="width:100%; display:block;">10-00014543</span></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- 첨부파일 -->
+            <div class="side-subheader">첨부파일</div>
+            <div class="attach-upload-row">
+              <button class="btn btn--outline" style="height:36px; font-size:13px; padding:0 14px; white-space:nowrap;">파일선택</button>
+              <a href="#" class="attach-link" style="flex:1;">홍길동 보완서류.png</a>
+              <span class="attach-date">2026-04-05</span>
+              <button class="attach-del">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              </button>
+            </div>
+
+            <div class="side-action-row">
+              <button class="btn btn--primary">저장 후 금융사 전송</button>
+            </div>
+
+            <!-- 메모 수발신 내용 -->
+            <div class="side-subheader" style="margin-top:16px;">메모 수발신 내용</div>
+            <div class="memo-input-row">
+              <textarea>*한도: 700 / 다수없음 *저축 승인</textarea>
+              <button class="memo-send-btn">전송</button>
+            </div>
+            <div class="memo-list">
+              <div class="memo-item">
+                <div class="memo-item__text memo-item__text--purple">
+                  <span class="memo-item__text-content">심사중 금리 : 19.32% / 한도 : 3000000 원</span>
+                  <span class="memo-item__icon memo-item__icon--received" aria-label="메시지 받음">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+                      <polyline points="8 9 12 13 16 9"/>
+                    </svg>
+                  </span>
+                </div>
+                <div class="memo-item__date">2026-04-03 16:42:28</div>
+              </div>
+              <div class="memo-item">
+                <div class="memo-item__text">
+                  <span class="memo-item__text-content">타채널 진행 중인 신청 건이 존재합니다 (20260409일 00시 이후 진행 가능)</span>
+                  <span class="memo-item__icon memo-item__icon--sent" aria-label="메시지 보냄">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+                      <polyline points="8 13 12 9 16 13"/>
+                    </svg>
+                  </span>
+                </div>
+                <div class="memo-item__date">2026-04-03 16:42:28</div>
+              </div>
+              <div class="memo-item">
+                <div class="memo-item__text">
+                  <span class="memo-item__text-content">서류를 다시 보내드렸습니다.</span>
+                  <span class="memo-item__icon memo-item__icon--sent" aria-label="메시지 보냄">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                      <path d="M21 15a4 4 0 0 1-4 4H7l-4 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+                      <polyline points="8 13 12 9 16 13"/>
+                    </svg>
+                  </span>
+                </div>
+                <div class="memo-item__date">2026-04-03 16:42:28</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 첨부파일 + 대출결과 카드 -->
+          <div class="detail-card">
+            <h2 class="detail-card__title" style="margin-bottom:8px;">첨부파일</h2>
+
+            <div class="attach-upload-row" style="border:1px solid var(--color-neutral-border); border-radius:4px 4px 0 0;">
+              <button class="btn btn--outline" style="height:36px; font-size:13px; padding:0 14px; white-space:nowrap;">파일선택</button>
+              <a href="#" class="attach-link" style="flex:1;">홍길동 보완서류.png</a>
+              <span class="attach-date">2026-04-05</span>
+              <button class="attach-del">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              </button>
+            </div>
+            <div class="attach-row">
+              <a href="#" class="attach-link">홍길동 보완서류.png</a>
+              <span class="attach-date">2026-04-05</span>
+              <button class="attach-del"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></button>
+            </div>
+            <div class="attach-row">
+              <a href="#" class="attach-link">홍길동 보완서류.png</a>
+              <span class="attach-date">2026-04-05</span>
+              <button class="attach-del"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></button>
+            </div>
+            <div class="attach-row" style="border-radius:0 0 4px 4px;">
+              <a href="#" class="attach-link">홍길동 보완서류.png</a>
+              <span class="attach-date">2026-04-05</span>
+              <button class="attach-del"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></button>
+            </div>
+
+            <div class="side-action-row">
+              <button class="btn btn--primary" style="display:flex; align-items:center; gap:6px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                파일전송
+              </button>
+            </div>
+
+            <hr class="side-divider">
+
+            <!-- 대출결과 -->
+            <h2 class="detail-card__title" style="margin-top:16px;">대출결과</h2>
+            <table class="side-table">
+              <tbody>
+                <tr>
+                  <th>진행상태</th>
+                  <td><span class="detail-value" style="width:100%; display:block;">승인</span></td>
+                </tr>
+                <tr>
+                  <th>승인일자</th>
+                  <td><span class="detail-value" style="width:100%; display:block;">2024-02-11</span></td>
+                </tr>
+                <tr>
+                  <th>승인금액</th>
+                  <td>
+                    <div class="detail-field-group">
+                      <span class="detail-value" style="min-width:70px;">3,000</span>
+                      <span>만원</span>
+                      <span class="detail-value" style="min-width:50px; text-align:right;">19.19</span>
+                      <span>%</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>결과 및 사유</th>
+                  <td>
+                    <div class="detail-value" style="width:100%; min-height:60px; display:block; white-space:pre-wrap;">[상태:조건승인]300,18.73/LG휴대폰</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="side-action-row" style="padding-top:12px;">
+              <button class="btn btn--outline">저장 후 지사 전송</button>
+            </div>
+          </div>
+
+        </div><!-- /detail-layout__side -->
+
+      </div><!-- /detail-layout -->
+    </section>
+  </main>
+ </div>
+<script>
+  // 상세 화면에서도 즉시 수정할 수 있도록 편집 가능 상태를 기본 활성화한다.
+  document.querySelectorAll(".detail-value").forEach(function (el) {
+    el.setAttribute("contenteditable", "true");
+    el.setAttribute("tabindex", "0");
+    el.setAttribute("role", "textbox");
+  });
+
+  document
+    .querySelectorAll("textarea[readonly], input[readonly], select[readonly]")
+    .forEach(function (el) {
+      el.removeAttribute("readonly");
+    });
+
+  document.querySelectorAll("[disabled]").forEach(function (el) {
+    el.removeAttribute("disabled");
+  });
+</script>
+<script src="js/sidebar-render.js"></script>
+</body>
+</html>

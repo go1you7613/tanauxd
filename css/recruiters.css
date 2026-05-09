@@ -1,0 +1,154 @@
+/* 회원관리 > 모집인 관리 */
+
+.recruiter-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-16);
+  padding: var(--space-16);
+  margin-bottom: var(--space-24);
+  border: 1px solid var(--color-neutral-border);
+  border-radius: var(--radius-md);
+  background: var(--color-neutral-surface);
+}
+
+.recruiter-filter-bar .field {
+  flex: 0 1 180px;
+  min-width: 140px;
+}
+
+.recruiter-filter-bar__actions,
+.recruiter-page-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.recruiter-filter-bar__actions {
+  margin-left: auto;
+}
+
+.recruiters-table-wrap {
+  overflow-x: auto;
+}
+
+.recruiters-table {
+  min-width: 980px;
+  table-layout: fixed;
+  font-size: var(--type-table-header-size);
+}
+
+.recruiters-table th,
+.recruiters-table td {
+  padding: var(--space-8);
+  text-align: center;
+  white-space: normal;
+}
+
+.recruiters-table__col-check { width: 48px; }
+.recruiters-table__col-no { width: 64px; }
+.recruiters-table__col-finance { width: 140px; }
+.recruiters-table__col-branch { width: 120px; }
+.recruiters-table__col-name { width: 180px; }
+.recruiters-table__col-code { width: 180px; }
+.recruiters-table__col-phone { width: 180px; }
+.recruiters-table__col-date { width: 140px; }
+.recruiters-table__col-action { width: 80px; }
+
+.recruiter-name-link {
+  color: var(--color-status-info);
+  font-weight: var(--type-accent-weight);
+}
+
+.recruiter-panel {
+  max-width: 980px;
+  border: 1px solid var(--color-neutral-border);
+  border-radius: var(--radius-md);
+  background: var(--color-neutral-surface);
+  overflow: hidden;
+}
+
+.recruiter-form-grid {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.recruiter-form-grid th,
+.recruiter-form-grid td {
+  padding: var(--space-12) var(--space-16);
+  border-bottom: 1px solid var(--color-neutral-border);
+  vertical-align: middle;
+}
+
+.recruiter-form-grid th {
+  width: 190px;
+  text-align: left;
+  background: var(--color-neutral-background);
+  color: var(--color-text-secondary);
+  font-size: var(--type-table-header-size);
+  font-weight: var(--type-table-header-weight);
+}
+
+.recruiter-form-grid .input,
+.recruiter-form-grid .select {
+  width: 100%;
+}
+
+.recruiter-inline-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.recruiter-inline-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.recruiter-branch-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8) var(--space-12);
+}
+
+.recruiter-branch-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.recruiter-readonly-value {
+  color: var(--color-text-primary);
+  word-break: break-word;
+}
+
+.recruiter-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-12);
+  padding: var(--space-24);
+  border-top: 1px solid var(--color-neutral-border);
+  background: var(--color-neutral-background);
+}
+
+.recruiter-actions .btn {
+  min-width: 104px;
+}
+
+.btn--row-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 0 var(--space-8);
+  border: 1px solid var(--color-status-error);
+  border-radius: var(--radius-sm);
+  background: var(--color-neutral-surface);
+  color: var(--color-status-error);
+  font-size: var(--type-table-header-size);
+  font-weight: var(--type-table-header-weight);
+}

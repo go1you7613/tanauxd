@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공지사항 상세 | DAESINLOAN</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/notices.css">
+</head>
+<body>
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <main class="app__main">
+    <header class="page-header">
+      <h1>공지사항</h1>
+      <div class="notice-page-actions">
+        <a href="04-01_notices_list.html" class="btn btn--outline">목록으로</a>
+        <a href="04-03_notices_edit.html" class="btn btn--primary">수정</a>
+      </div>
+    </header>
+
+    <section class="page-body">
+      <article class="notice-panel">
+        <div class="notice-detail-head">
+          <div class="notice-detail-head__meta">
+            <span class="notice-badge notice-badge--important">중요</span>
+            <span class="notice-badge">공지</span>
+          </div>
+          <h2 class="notice-detail-head__title">대출 모집인 전산 사용 기준 안내</h2>
+        </div>
+
+        <dl class="notice-detail-info">
+          <div class="notice-detail-info__item">
+            <dt>작성자</dt>
+            <dd>관리자</dd>
+          </div>
+          <div class="notice-detail-info__item">
+            <dt>등록일</dt>
+            <dd>2026-05-09</dd>
+          </div>
+          <div class="notice-detail-info__item">
+            <dt>조회수</dt>
+            <dd>128</dd>
+          </div>
+          <div class="notice-detail-info__item">
+            <dt>공개</dt>
+            <dd>공개</dd>
+          </div>
+        </dl>
+
+        <div class="notice-content">
+          <p>대출 모집인 전산 사용 시 고객 정보 확인, 상품 선택, 첨부파일 등록 기준을 아래와 같이 안내합니다.</p>
+          <p>업무 처리 전 최신 공지와 첨부된 운영 가이드를 확인해 주세요. 문의 사항은 운영팀으로 전달해 주시기 바랍니다.</p>
+        </div>
+
+        <div class="notice-attachments">
+          <h3 class="notice-attachments__title">첨부파일</h3>
+          <ul class="notice-attachments__list">
+            <li><a href="#">대출모집인_전산사용기준.pdf</a></li>
+            <li><a href="#">첨부파일_등록_예시.xlsx</a></li>
+          </ul>
+        </div>
+
+        <div class="notice-detail-actions">
+          <a href="04-01_notices_list.html" class="btn btn--outline">목록</a>
+          <a href="04-03_notices_edit.html" class="btn btn--primary">수정</a>
+          <button type="button" class="btn btn--outline">삭제</button>
+        </div>
+      </article>
+    </section>
+  </main>
+</div>
+<script src="js/sidebar-render.js"></script>
+</body>
+</html>

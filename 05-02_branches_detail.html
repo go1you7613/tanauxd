@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지사 상세 | DAESINLOAN</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/branches.css">
+</head>
+<body>
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <main class="app__main">
+    <header class="page-header">
+      <h1>지사관리</h1>
+      <div class="branch-page-actions">
+        <a href="05-01_branches_list.html" class="btn btn--outline">목록으로</a>
+        <button type="button" class="btn btn--primary" id="branch-btn-edit">수정</button>
+      </div>
+    </header>
+
+    <section class="page-body">
+      <div class="branch-panel branch-detail-view">
+        <table class="branch-form-grid">
+          <tbody>
+            <tr><th scope="row">지사명</th><td><span class="branch-readonly-value">더블유</span></td></tr>
+            <tr><th scope="row">지사코드</th><td><span class="branch-readonly-value">003000000</span></td></tr>
+            <tr><th scope="row">아이디</th><td><span class="branch-readonly-value">daesinloan</span></td></tr>
+            <tr><th scope="row">비밀번호</th><td><span class="branch-readonly-value">등록됨</span></td></tr>
+            <tr><th scope="row">인증코드</th><td><span class="branch-readonly-value">123456</span></td></tr>
+            <tr><th scope="row">권한</th><td><span class="branch-role branch-role--root">총괄관리자</span></td></tr>
+            <tr><th scope="row">수수료구분</th><td><span class="branch-readonly-value">수수료정책</span></td></tr>
+            <tr><th scope="row">기본 수수료</th><td><span class="branch-readonly-value">500만원 이하 0.00%, 500~1000만원 0.00%, 1000만원 이상 0.00%</span></td></tr>
+            <tr><th scope="row">상품별 수수료</th><td><span class="branch-readonly-value">한성 EF-G론 0.00%, 직장인 신용대출 0.00%, 청년300 0.00%</span></td></tr>
+            <tr><th scope="row">회사명(지점명)</th><td><span class="branch-readonly-value">더블유</span></td></tr>
+            <tr><th scope="row">담당자 명</th><td><span class="branch-readonly-value">더블유</span></td></tr>
+            <tr><th scope="row">전화번호</th><td><span class="branch-readonly-value">02-510-0010</span></td></tr>
+            <tr><th scope="row">핸드폰번호</th><td><span class="branch-readonly-value">010-1111-1111</span></td></tr>
+            <tr><th scope="row">주소</th><td><span class="branch-readonly-value">서울특별시 강남구 테헤란로 100</span></td></tr>
+            <tr><th scope="row">상품숨김</th><td><span class="branch-state--ok">정상</span></td></tr>
+            <tr><th scope="row">사용여부</th><td><span class="branch-readonly-value">사용</span></td></tr>
+          </tbody>
+        </table>
+        <div class="branch-actions">
+          <a href="05-01_branches_list.html" class="btn btn--outline">목록</a>
+        </div>
+      </div>
+
+      <form class="branch-panel branch-detail-edit" action="#" method="post" hidden>
+        <table class="branch-form-grid">
+          <tbody>
+            <tr><th scope="row"><label for="branch-name">지사명</label></th><td><input id="branch-name" class="input" type="text" value="더블유"></td></tr>
+            <tr><th scope="row"><label for="branch-code">지사코드</label></th><td><input id="branch-code" class="input" type="text" value="003000000"></td></tr>
+            <tr><th scope="row"><label for="branch-id">아이디</label></th><td><input id="branch-id" class="input" type="text" value="daesinloan" pattern="[A-Za-z0-9]+" title="아이디는 영문과 숫자만 입력할 수 있습니다."></td></tr>
+            <tr><th scope="row"><label for="branch-password">비밀번호</label></th><td><input id="branch-password" class="input" type="password" value="password"></td></tr>
+            <tr><th scope="row"><label for="branch-auth-code">인증코드</label></th><td><input id="branch-auth-code" class="input" type="text" value="123456" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="6자리"></td></tr>
+            <tr><th scope="row"><label for="branch-role">권한</label></th><td><select id="branch-role" class="select"><option selected>총괄관리자</option><option>지사</option><option>금융사</option><option>대출사</option><option>관리자</option></select></td></tr>
+            <tr><th scope="row">수수료구분</th><td><div class="branch-inline-options"><label><input type="radio" name="fee-type" checked> 수수료정책</label><label><input type="radio" name="fee-type"> 상품별수수료</label></div></td></tr>
+            <tr>
+              <th scope="row">기본 수수료</th>
+              <td>
+                <table class="branch-fee-table">
+                  <thead><tr><th>금액</th><th>지급수수료(%)</th></tr></thead>
+                  <tbody><tr><td>500만원 이하</td><td><input class="input" type="text" value="0.00"></td></tr><tr><td>500 ~ 1000만원</td><td><input class="input" type="text" value="0.00"></td></tr><tr><td>1000만원 이상</td><td><input class="input" type="text" value="0.00"></td></tr></tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">상품별 수수료</th>
+              <td>
+                <table class="branch-fee-table">
+                  <thead><tr><th>상품명</th><th>~ 500만원</th><th>500 ~ 1000만원</th><th>1000만원 ~</th></tr></thead>
+                  <tbody><tr><td>한성 EF-G론</td><td><input class="input" type="text" value="0.00"></td><td><input class="input" type="text" value="0.00"></td><td><input class="input" type="text" value="0.00"></td></tr><tr><td>직장인 신용대출</td><td><input class="input" type="text" value="0.00"></td><td><input class="input" type="text" value="0.00"></td><td><input class="input" type="text" value="0.00"></td></tr></tbody>
+                </table>
+              </td>
+            </tr>
+            <tr><th scope="row"><label for="branch-company">회사명(지점명)</label></th><td><input id="branch-company" class="input" type="text" value="더블유"></td></tr>
+            <tr><th scope="row"><label for="branch-manager">담당자 명</label></th><td><input id="branch-manager" class="input" type="text" value="더블유"></td></tr>
+            <tr><th scope="row">전화번호</th><td><input class="input" type="text" value="02-510-0010"></td></tr>
+            <tr><th scope="row">핸드폰번호</th><td><input class="input" type="text" value="010-1111-1111"></td></tr>
+            <tr><th scope="row">주소</th><td><input class="input" type="text" value="서울특별시 강남구 테헤란로 100"></td></tr>
+            <tr><th scope="row">상품숨김</th><td><div class="branch-inline-options"><label><input type="radio" name="hide-product" checked> 정상</label><label><input type="radio" name="hide-product"> 숨김</label></div></td></tr>
+            <tr><th scope="row">사용여부</th><td><div class="branch-inline-options"><label><input type="radio" name="use-yn" checked> 사용</label><label><input type="radio" name="use-yn"> 사용안함</label></div></td></tr>
+          </tbody>
+        </table>
+        <div class="branch-actions">
+          <button type="submit" class="btn btn--primary">저장</button>
+          <button type="button" class="btn btn--outline" id="branch-btn-cancel">취소</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</div>
+<script src="js/branches-detail-mode.js"></script>
+<script src="js/sidebar-render.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+/* 회원관리 > 지사관리 */
+
+.branch-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-16);
+  padding: var(--space-16);
+  margin-bottom: var(--space-24);
+  border: 1px solid var(--color-neutral-border);
+  border-radius: var(--radius-md);
+  background: var(--color-neutral-surface);
+}
+
+.branch-filter-bar .field {
+  flex: 0 1 180px;
+  min-width: 140px;
+}
+
+.branch-filter-bar__actions,
+.branch-page-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.branch-filter-bar__actions {
+  margin-left: auto;
+}
+
+.branches-table-wrap {
+  overflow-x: auto;
+}
+
+.branches-table {
+  min-width: 1280px;
+  table-layout: fixed;
+  font-size: var(--type-table-header-size);
+}
+
+.branches-table thead th,
+.branches-table tbody td {
+  padding: var(--space-8);
+  white-space: normal;
+  text-align: center;
+}
+
+.branches-table__col-no { width: 56px; }
+.branches-table__col-name { width: 160px; }
+.branches-table__col-code { width: 120px; }
+.branches-table__col-manager { width: 120px; }
+.branches-table__col-id { width: 130px; }
+.branches-table__col-auth { width: 96px; }
+.branches-table__col-role { width: 88px; }
+.branches-table__col-status { width: 96px; }
+.branches-table__col-fee { width: 128px; }
+.branches-table__col-recruiter { width: 120px; }
+.branches-table__col-action { width: 80px; }
+
+.branch-name-link {
+  color: var(--color-status-info);
+  font-weight: var(--type-accent-weight);
+}
+
+.branch-role {
+  font-weight: 700;
+}
+
+.branch-role--root,
+.branch-state--danger {
+  color: var(--color-status-error);
+}
+
+.branch-role--finance {
+  color: #001eff;
+}
+
+.branch-state--ok {
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+.branch-state--muted {
+  color: var(--color-text-secondary);
+}
+
+.branch-panel {
+  max-width: 980px;
+  border: 1px solid var(--color-neutral-border);
+  border-radius: var(--radius-md);
+  background: var(--color-neutral-surface);
+  overflow: hidden;
+}
+
+.branch-form-grid {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.branch-form-grid th,
+.branch-form-grid td {
+  padding: var(--space-12) var(--space-16);
+  border-bottom: 1px solid var(--color-neutral-border);
+  vertical-align: middle;
+}
+
+.branch-form-grid th {
+  width: 180px;
+  text-align: left;
+  background: var(--color-neutral-background);
+  color: var(--color-text-secondary);
+  font-size: var(--type-table-header-size);
+  font-weight: var(--type-table-header-weight);
+}
+
+.branch-form-grid .input,
+.branch-form-grid .select {
+  width: 100%;
+}
+
+.branch-readonly-value {
+  color: var(--color-text-primary);
+  word-break: break-word;
+}
+
+.branch-inline-options,
+.branch-product-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+.branch-inline-options label,
+.branch-product-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.branch-fee-table {
+  width: 100%;
+  max-width: 640px;
+  border-collapse: collapse;
+  font-size: var(--type-table-header-size);
+}
+
+.branch-fee-table th,
+.branch-fee-table td {
+  padding: var(--space-8);
+  border: 1px solid var(--color-neutral-border);
+  text-align: center;
+}
+
+.branch-fee-table th {
+  background: var(--color-neutral-background);
+  color: var(--color-text-secondary);
+  font-weight: var(--type-table-header-weight);
+}
+
+.branch-fee-table .input {
+  height: 30px;
+  text-align: right;
+}
+
+.branch-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-12);
+  padding: var(--space-24);
+  border-top: 1px solid var(--color-neutral-border);
+  background: var(--color-neutral-background);
+}
+
+.branch-actions .btn {
+  min-width: 104px;
+}
+
+.btn--row-edit,
+.btn--row-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 0 var(--space-8);
+  border-radius: var(--radius-sm);
+  font-size: var(--type-table-header-size);
+  font-weight: var(--type-table-header-weight);
+}
+
+.btn--row-edit {
+  border: 1px solid var(--color-brand-primary);
+  background: var(--color-neutral-surface);
+  color: var(--color-brand-primary);
+}
+
+.btn--row-edit:hover {
+  background: var(--color-brand-subtle);
+}
+
+.btn--row-delete {
+  border: 1px solid var(--color-status-error);
+  background: var(--color-neutral-surface);
+  color: var(--color-status-error);
+}
+
+.btn--row-delete:hover {
+  background: rgba(239, 68, 68, 0.1);
+}

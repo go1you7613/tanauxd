@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지사별 통계 | DAESINLOAN</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/statistics.css">
+</head>
+<body>
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <main class="app__main">
+    <header class="page-header"><h1>통계관리</h1></header>
+    <section class="page-body">
+      <nav class="stats-tabs" aria-label="통계 메뉴">
+        <a class="stats-tabs__link" href="08-01_statistics_daily.html">일자별 통계</a>
+        <a class="stats-tabs__link" href="08-02_statistics_product.html">상품별 통계</a>
+        <a class="stats-tabs__link is-active" href="08-03_statistics_branch.html">지사별 통계</a>
+        <a class="stats-tabs__link" href="08-04_statistics_recruiter.html">모집인 통계</a>
+      </nav>
+
+      <form class="stats-search-panel" onsubmit="return false;">
+        <div class="stats-search-panel__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>검색메뉴</div>
+        <div class="stats-search-panel__body">
+          <div class="field"><label for="stat-branch">제휴사</label><select id="stat-branch" class="select"><option>-제휴사-</option><option>프라</option><option>화이트</option></select></div>
+          <div class="field"><label for="stat-lender">금융사</label><select id="stat-lender" class="select"><option>-금융사-</option><option>온누리AG</option><option>상품AG</option></select></div>
+          <div class="field field--wide"><label for="stat-product">금융상품</label><select id="stat-product" class="select"><option>-금융상품-</option><option>한성 EF-G론</option><option>청년300</option></select></div>
+          <div class="field"><label>조회기간</label><div class="stats-date-range"><input class="input" type="text" value="20260509"><span>~</span><input class="input" type="text" value="20260509"></div></div>
+          <div class="stats-search-panel__actions"><button type="submit" class="btn btn--primary">검색실행</button><button type="reset" class="btn btn--outline">검색취소</button></div>
+        </div>
+      </form>
+
+      <div class="stats-table-wrap">
+        <table class="stats-table">
+          <thead>
+            <tr><th>지사</th><th>접수</th><th>심사</th><th>부결</th><th>승인</th><th>승인율</th><th>승인액</th></tr>
+          </thead>
+          <tbody>
+            <tr class="stats-table__total"><td>합계</td><td class="u-num">12</td><td class="u-num">4</td><td class="u-num u-reject">8</td><td class="u-num u-approve">2</td><td>16.7 %</td><td class="u-num">4,200 만원</td></tr>
+            <tr><td>119대부</td><td class="u-num">0</td><td class="u-num">0</td><td class="u-num u-reject">0</td><td class="u-num u-approve">0</td><td>0 %</td><td class="u-num u-strong">0 만원</td></tr>
+            <tr><td>a1</td><td class="u-num">0</td><td class="u-num">0</td><td class="u-num u-reject">0</td><td class="u-num u-approve">0</td><td>0 %</td><td class="u-num u-strong">0 만원</td></tr>
+            <tr><td>프라</td><td class="u-num">7</td><td class="u-num">2</td><td class="u-num u-reject">4</td><td class="u-num u-approve">1</td><td>14.3 %</td><td class="u-num u-strong">2,100 만원</td></tr>
+            <tr><td>화이트</td><td class="u-num">5</td><td class="u-num">2</td><td class="u-num u-reject">4</td><td class="u-num u-approve">1</td><td>20 %</td><td class="u-num u-strong">2,100 만원</td></tr>
+            <tr><td>KUMKANG</td><td class="u-num">0</td><td class="u-num">0</td><td class="u-num u-reject">0</td><td class="u-num u-approve">0</td><td>0 %</td><td class="u-num u-strong">0 만원</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="js/sidebar-render.js"></script>
+</body>
+</html>

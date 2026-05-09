@@ -1,0 +1,311 @@
+.loans-table-wrap { overflow-x: auto; }
+.loans-table { min-width: 1700px; }
+
+.tag-product {
+  display: inline-block;
+  margin-right: 4px;
+  padding: 1px 8px;
+  border-radius: 10px;
+  background: rgba(59, 130, 246, 0.10);
+  color: var(--color-status-info);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.badge--memo {
+  border: none;
+  cursor: pointer;
+}
+
+.memo-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(31, 41, 55, 0.48);
+  padding: var(--space-24);
+}
+
+.memo-modal.is-open { display: flex; }
+
+.memo-modal__panel {
+  width: min(860px, 100%);
+  max-height: calc(100vh - 64px);
+  background: var(--color-neutral-surface);
+  border: 1px solid var(--color-neutral-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 32px rgba(31, 41, 55, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.memo-modal__bar {
+  height: 48px;
+  border-bottom: 1px solid var(--color-neutral-border);
+  padding: 0 var(--space-16);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--type-table-header-size);
+  font-weight: var(--type-table-header-weight);
+  color: var(--color-text-secondary);
+}
+
+.memo-modal__bar-title {
+  font-size: var(--type-h1-size);
+  font-weight: var(--type-h1-weight);
+  color: var(--color-brand-primary);
+}
+
+.memo-meta-wrap {
+  padding: var(--space-12) var(--space-16);
+  border-bottom: 1px solid var(--color-neutral-border);
+  background: var(--color-neutral-surface);
+}
+
+.memo-meta {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.memo-meta th,
+.memo-meta td {
+  border: 1px solid var(--color-neutral-border);
+  padding: var(--space-8) var(--space-12);
+  text-align: center;
+  font-size: var(--type-section-size);
+  font-weight: var(--type-section-weight);
+  color: var(--color-text-strong);
+}
+
+.memo-meta th {
+  width: 120px;
+  background: var(--color-neutral-background);
+  color: var(--color-text-secondary);
+  font-size: var(--type-table-header-size);
+  font-weight: var(--type-table-header-weight);
+}
+
+.memo-list-wrap {
+  padding: var(--space-12) var(--space-16) var(--space-16);
+  overflow: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.memo-list {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.memo-list th,
+.memo-list td {
+  border: 1px solid var(--color-neutral-border);
+  padding: var(--space-8) var(--space-12);
+  font-size: var(--type-body-size);
+  font-weight: var(--type-body-weight);
+  color: var(--color-text-primary);
+  text-align: left;
+  line-height: 1.45;
+  word-break: keep-all;
+  background: var(--color-neutral-surface);
+}
+
+.memo-list th {
+  text-align: center;
+  font-size: var(--type-table-header-size);
+  font-weight: var(--type-table-header-weight);
+  color: var(--color-text-secondary);
+  background: var(--color-neutral-background);
+}
+
+.memo-list td:nth-child(1) {
+  width: 170px;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-secondary);
+}
+
+.memo-list td:nth-child(2) {
+  width: 96px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.memo-list td:nth-child(4) {
+  word-break: break-word;
+}
+
+.memo-list .u-center { text-align: center; }
+.memo-list .memo-highlight td { background: var(--color-brand-subtle); }
+
+.memo-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 68px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  padding: 0 var(--space-8);
+  font-size: var(--type-table-header-size);
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.memo-status--error {
+  color: var(--color-status-error);
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.memo-status--waiting {
+  color: var(--color-status-error);
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.16);
+}
+
+.memo-status--send {
+  color: var(--color-status-info);
+  background: rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.memo-status--none {
+  color: var(--color-text-secondary);
+  background: var(--color-neutral-background);
+  border-color: var(--color-neutral-border);
+}
+
+.memo-modal__actions {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid var(--color-neutral-border);
+  background: var(--color-neutral-background);
+  padding: var(--space-12) var(--space-16);
+}
+
+.memo-modal__close {
+  min-width: 96px;
+}
+
+.memo-modal__close-top {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  padding: 0;
+  border-radius: var(--radius-sm);
+}
+
+.memo-modal__close-top svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2;
+}
+
+/* 신청자 호버 — 타사진행내역 툴팁 (내용은 마크업으로 페이지별 주입) */
+.applicant-tooltip {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.applicant-tooltip__trigger {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.applicant-tooltip__panel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.applicant-tooltip__panel--floating {
+  position: fixed;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  max-width: min(360px, calc(100vw - 16px));
+  padding: 0;
+  border: none;
+  box-shadow: 0 8px 24px rgba(31, 41, 55, 0.18);
+  border-radius: var(--radius-md);
+  background: var(--color-neutral-surface);
+}
+
+.applicant-tooltip__title {
+  display: block;
+  text-align: center;
+  font-size: var(--type-section-size);
+  font-weight: var(--type-section-weight);
+  color: var(--color-text-strong);
+  padding: var(--space-8) var(--space-12) var(--space-8);
+}
+
+.applicant-tooltip__body {
+  margin: 0 var(--space-8) var(--space-8);
+  padding: var(--space-12);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-border);
+  background: var(--color-neutral-background);
+}
+
+@supports (background: color-mix(in srgb, white, black)) {
+  .applicant-tooltip__body {
+    background: color-mix(in srgb, var(--color-neutral-border) 35%, var(--color-neutral-surface));
+  }
+}
+
+.applicant-tooltip__line {
+  margin: 0;
+  font-size: var(--type-body-size);
+  font-weight: var(--type-body-weight);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+}
+
+.applicant-tooltip__line + .applicant-tooltip__line {
+  margin-top: var(--space-8);
+}
+
+.applicant-tooltip__name {
+  color: var(--color-text-primary);
+}
+
+.applicant-tooltip__kind {
+  color: var(--color-status-success);
+  font-weight: 600;
+}
+
+.applicant-tooltip__state {
+  color: var(--color-status-error);
+  font-weight: 600;
+}
+
+.applicant-tooltip__rest {
+  color: var(--color-text-primary);
+}
+
+.applicant-tooltip__empty {
+  margin: 0;
+  font-size: var(--type-body-size);
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.applicant-tooltip-float-root:empty {
+  display: none;
+}

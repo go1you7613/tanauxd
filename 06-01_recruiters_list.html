@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모집인 관리 | DAESINLOAN</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/recruiters.css">
+</head>
+<body>
+<div class="app">
+  <div id="sidebar-root"></div>
+
+  <main class="app__main">
+    <header class="page-header">
+      <h1>모집인 관리</h1>
+      <div class="recruiter-page-actions">
+        <a href="06-03_recruiters_register.html" class="btn btn--primary">등록</a>
+      </div>
+    </header>
+
+    <section class="page-body">
+      <form class="recruiter-filter-bar" onsubmit="return false;">
+        <div class="field">
+          <label for="rf-finance">금융사</label>
+          <select id="rf-finance" class="select">
+            <option>-금융사-</option>
+            <option>삼호AG</option>
+            <option>오케이엔AG</option>
+            <option>프라</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="rf-branch">제휴사</label>
+          <select id="rf-branch" class="select">
+            <option>-제휴사-</option>
+            <option>본사</option>
+            <option>jsm</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="rf-name">모집인</label>
+          <input id="rf-name" class="input" type="text">
+        </div>
+        <div class="recruiter-filter-bar__actions">
+          <button type="submit" class="btn btn--primary">검색실행</button>
+          <button type="reset" class="btn btn--outline">검색취소</button>
+        </div>
+      </form>
+
+      <div class="table-wrap recruiters-table-wrap">
+        <table class="table recruiters-table">
+          <thead>
+            <tr>
+              <th class="recruiters-table__col-check"><input type="checkbox" aria-label="전체 선택"></th>
+              <th class="recruiters-table__col-no">번호</th>
+              <th class="recruiters-table__col-finance">금융사</th>
+              <th class="recruiters-table__col-branch">지사</th>
+              <th class="recruiters-table__col-name">모집인</th>
+              <th class="recruiters-table__col-code">모집인번호</th>
+              <th class="recruiters-table__col-phone">전화번호</th>
+              <th class="recruiters-table__col-date">등록일</th>
+              <th class="recruiters-table__col-action">삭제</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" aria-label="행 선택"></td>
+              <td>416</td>
+              <td><strong>삼호AG</strong></td>
+              <td>본사</td>
+              <td><a class="recruiter-name-link" href="06-02_recruiters_detail.html">김성수(삼호)</a></td>
+              <td>10-00014543</td>
+              <td>010-1111-1111</td>
+              <td>2026-05-09</td>
+              <td><button type="button" class="btn--row-delete">삭제</button></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" aria-label="행 선택"></td>
+              <td>415</td>
+              <td><strong>오케이엔AG</strong></td>
+              <td>본사</td>
+              <td><a class="recruiter-name-link" href="06-02_recruiters_detail.html">조민형</a></td>
+              <td>2-230-0536</td>
+              <td>010-2222-2222</td>
+              <td>2026-05-08</td>
+              <td><button type="button" class="btn--row-delete">삭제</button></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" aria-label="행 선택"></td>
+              <td>414</td>
+              <td><strong>문키AG</strong></td>
+              <td>본사</td>
+              <td><a class="recruiter-name-link" href="06-02_recruiters_detail.html">정주미</a></td>
+              <td>10-00009183</td>
+              <td>010-3333-3333</td>
+              <td>2026-05-07</td>
+              <td><button type="button" class="btn--row-delete">삭제</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="js/sidebar-render.js"></script>
+</body>
+</html>

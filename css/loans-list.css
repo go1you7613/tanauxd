@@ -1,5 +1,25 @@
+.loans-filter-bar {
+  grid-template-columns: minmax(280px, 1.2fr) minmax(150px, 0.8fr) minmax(180px, 1fr) minmax(150px, 0.8fr) minmax(200px, 1fr);
+}
+
+.loans-filter-bar .filter-bar__actions {
+  grid-column: 1 / -1;
+}
+
+.loans-date-range {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.loans-date-range__separator {
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
 .loans-table-wrap { overflow-x: auto; }
-.loans-table { min-width: 1700px; }
+.loans-table { min-width: 1580px; }
 
 .tag-product {
   display: inline-block;

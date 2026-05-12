@@ -33,10 +33,14 @@
     <section class="page-body">
 
       <!-- 검색 필터 바 -->
-      <form class="filter-bar" onsubmit="return false;">
-        <div class="field">
-          <label for="f-date">접수일자</label>
-          <input id="f-date" class="input" type="date" value="2026-04-01">
+      <form class="filter-bar loans-filter-bar" onsubmit="return false;">
+        <div class="field field--date-range">
+          <label>최종 처리(승인일)</label>
+          <div class="loans-date-range">
+            <input id="f-processed-start" class="input" type="date" value="2026-04-01" aria-label="최종 처리 시작일">
+            <span class="loans-date-range__separator">~</span>
+            <input id="f-processed-end" class="input" type="date" value="2026-04-30" aria-label="최종 처리 종료일">
+          </div>
         </div>
         <div class="field">
           <label for="f-branch">지사</label>
@@ -46,6 +50,10 @@
             <option>판교지사</option>
             <option>부산지사</option>
           </select>
+        </div>
+        <div class="field">
+          <label for="f-product">상품명</label>
+          <input id="f-product" class="input" type="text" placeholder="상품명 입력">
         </div>
         <div class="field">
           <label for="f-status">처리상태</label>
@@ -79,7 +87,6 @@
               <th>신청자</th>
               <th>주민번호</th>
               <th class="u-num">신청금액</th>
-              <th class="u-num">가승인액</th>
               <th class="u-center">처리상태</th>
               <th class="u-center">처리일</th>
               <th class="u-num">승인금액</th>
@@ -113,11 +120,10 @@
                 </span>
               </td>
               <td>900101-1******</td>
-              <td class="u-num">50,000,000</td>
-              <td class="u-num">48,000,000</td>
+              <td class="u-num">5,000만</td>
               <td class="u-center"><span class="badge badge--success">승인</span></td>
               <td class="u-center">2026-04-22</td>
-              <td class="u-num">48,000,000</td>
+              <td class="u-num">4,800만</td>
               <td class="u-num">4.50%</td>
               <td class="u-center"><span class="badge badge--subtle">완료</span></td>
               <td>-</td>
@@ -141,8 +147,7 @@
                 </span>
               </td>
               <td>850315-1******</td>
-              <td class="u-num">30,000,000</td>
-              <td class="u-num">-</td>
+              <td class="u-num">3,000만</td>
               <td class="u-center"><span class="badge badge--info">검토중</span></td>
               <td class="u-center">-</td>
               <td class="u-num">-</td>
@@ -174,8 +179,7 @@
                 </span>
               </td>
               <td>780720-2******</td>
-              <td class="u-num">100,000,000</td>
-              <td class="u-num">0</td>
+              <td class="u-num">10,000만</td>
               <td class="u-center"><span class="badge badge--error">반려</span></td>
               <td class="u-center">2026-04-21</td>
               <td class="u-num">-</td>

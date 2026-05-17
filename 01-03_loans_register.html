@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>대출진행목록 - 상세 | DAESINLOAN</title>
+  <title>고객등록 | DAESINLOAN</title>
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/detail.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
-<body>
+<body class="loan-register-page">
 <div class="app">
 
   <!-- ── 사이드바 ── -->
@@ -18,10 +18,10 @@
   <!-- ── 본문 ── -->
   <main class="app__main">
     <header class="page-header">
-      <h1>대출진행목록</h1>
+      <h1>고객등록</h1>
       <div style="display:flex; gap: var(--space-8);">
         <a href="01-01_loans_list.html" class="btn btn--outline">목록으로</a>
-        <button class="btn btn--primary">저장</button>
+        <button class="btn btn--primary">등록</button>
       </div>
     </header>
 
@@ -31,46 +31,121 @@
         <!-- ══ 왼쪽 메인 컬럼 ══ -->
         <div class="detail-layout__main">
 
-          <!-- 1. 상품정보 (단일 상품) -->
+          <!-- 1. 상품 선택 -->
           <div class="detail-card">
-            <div class="detail-card__title-row">
-              <h2 class="detail-card__title">상품정보</h2>
-              <button id="product-change-open" type="button" class="btn btn--outline">상품 변경</button>
+            <h2 class="detail-card__title">상품 선택</h2>
+            <div class="product-select-category-tabs" role="tablist" aria-label="상품 탭메뉴">
             </div>
-            <article class="product-highlight" aria-label="선택된 대출 상품">
-              <div class="product-highlight__body">
-                <span class="product-highlight__badge product-highlight__badge--youth">청년</span>
-                <div class="product-highlight__name-row">
-                  <h3 class="product-highlight__name">대한저축(청년4대미가입)</h3>
-                  <div class="product-highlight__actions" aria-label="상품 관련 기능">
-                    <button type="button" class="product-highlight__action-btn product-highlight__action-btn--primary">상품상세정보</button>
-                    <button type="button" class="product-highlight__action-btn">조견표</button>
-                    <button type="button" class="product-highlight__action-btn">동의서</button>
-                    <button type="button" class="product-highlight__action-btn">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M14 3h7v7"/><path d="M10 14L21 3"/><path d="M21 14v7h-7"/><path d="M3 10V3h7"/><path d="M3 3l7 7"/><path d="M3 21l7-7"/><path d="M14 21h7v-7"/></svg>
-                      본인인증
-                    </button>
-                    <button type="button" class="product-highlight__action-btn">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M14 3h7v7"/><path d="M10 14L21 3"/><path d="M21 14v7h-7"/><path d="M3 10V3h7"/><path d="M3 3l7 7"/><path d="M3 21l7-7"/><path d="M14 21h7v-7"/></svg>
-                      전자서명
-                    </button>
-                  </div>
-                </div>
-                <dl class="product-highlight__meta">
-                  <div class="product-highlight__meta-row">
-                    <p class="product-highlight__meta-note product-highlight__meta-note--highlight">[신용,채무통합,사잇돌조회/4대가입(재직3 납부2회)/법인대표(4대가입 필수]</p>
-                    <p class="product-highlight__meta-note product-highlight__meta-note--default">[서류첨부후(컬러신분증/변제현황캡쳐본必)/기타사항작성/후인증(금융사 안내)]</p>
-                  </div>
-                  <div class="product-highlight__meta-row product-highlight__meta-row--divider">
-                    <dt>모집인</dt>
-                    <dd><span class="badge badge--info">김경숙</span></dd>
-                  </div>
-                </dl>
+            <div id="product-panels" class="product-select-panels">
+              <div class="product-select-item" data-product-category="youth" data-product-category-label="청년">
+                <input type="radio" name="register-product">
+                <span class="product-select-item__summary">
+                  <span class="product-select-item__category product-select-item__category--youth">청년</span>
+                  <strong class="product-select-item__name">대한저축(청년4대미가입)</strong>
+                  <span class="product-select-item__memo product-select-item__memo--highlight">[신용,채무통합,사잇돌조회/4대가입(재직3 납부2회)/법인대표(4대가입 필수]</span>
+                  <span class="product-select-item__memo">[서류첨부후(컬러신분증/변제현황캡쳐본必)/기타사항작성/후인증(금융사 안내)]</span>
+                </span>
               </div>
-            </article>
+              <div class="product-select-item" data-product-category="worker" data-product-category-label="직장인">
+                <input type="radio" name="register-product">
+                <span class="product-select-item__summary">
+                  <span class="product-select-item__category product-select-item__category--worker">직장인</span>
+                  <strong class="product-select-item__name">직장인 신용대출 프리미엄</strong>
+                  <span class="product-select-item__memo product-select-item__memo--highlight">[재직 3개월 이상/급여 2회 이상/4대가입 우대]</span>
+                  <span class="product-select-item__memo">[신분증/재직확인/소득자료 확인 후 금융사 전송]</span>
+                </span>
+              </div>
+              <div class="product-select-item" data-product-category="sun" data-product-category-label="햇살론">
+                <input type="radio" name="register-product">
+                <span class="product-select-item__summary">
+                  <span class="product-select-item__category product-select-item__category--sun">햇살론</span>
+                  <strong class="product-select-item__name">서민금융 햇살론</strong>
+                  <span class="product-select-item__memo product-select-item__memo--highlight">[저신용/저소득 고객 대상/재직 및 소득 확인 필수]</span>
+                  <span class="product-select-item__memo">[보증심사 후 진행/추가서류 요청 가능]</span>
+                </span>
+              </div>
+              <div class="product-select-item" data-product-category="auto" data-product-category-label="오토">
+                <input type="radio" name="register-product">
+                <span class="product-select-item__summary">
+                  <span class="product-select-item__category product-select-item__category--auto">오토</span>
+                  <strong class="product-select-item__name">오토 담보대출</strong>
+                  <span class="product-select-item__memo product-select-item__memo--highlight">[차량번호/주행거리/소유자 확인 후 한도 산정]</span>
+                  <span class="product-select-item__memo">[차량정보 입력 필수/담보 조건 확인]</span>
+                </span>
+              </div>
+              <div class="product-select-item" data-product-category="recovery" data-product-category-label="회파복">
+                <input type="radio" name="register-product">
+                <span class="product-select-item__summary">
+                  <span class="product-select-item__category product-select-item__category--recovery">회파복</span>
+                  <strong class="product-select-item__name">회생/회복/파산 전용상품</strong>
+                  <span class="product-select-item__memo product-select-item__memo--highlight">[회파복구분/법원명/사건번호 입력 필수]</span>
+                  <span class="product-select-item__memo">[환급계좌 정보 확인 후 심사 진행]</span>
+                </span>
+              </div>
+              <div class="product-select-item" data-product-category="other" data-product-category-label="기타">
+                <input type="radio" name="register-product">
+                <span class="product-select-item__summary">
+                  <span class="product-select-item__category product-select-item__category--other">기타</span>
+                  <strong class="product-select-item__name">사업자 운영자금</strong>
+                  <span class="product-select-item__memo product-select-item__memo--highlight">[사업자/프리랜서/기타 소득자 상담 후 진행]</span>
+                  <span class="product-select-item__memo">[기타사항에 상담 메모 작성 권장]</span>
+                </span>
+              </div>
+            </div>
           </div>
 
-          <!-- 2. 고객정보 -->
+          <!-- 2. 지사정보 -->
+          <div class="detail-card">
+            <h2 class="detail-card__title">지사정보</h2>
+            <table class="detail-table">
+              <tbody>
+                <tr>
+                  <th>지사선택</th>
+                  <td>
+                    <select id="register-branch-select" class="select detail-select" style="width:220px;">
+                      <option value="">선택</option>
+                      <option value="gangnam">강남지사</option>
+                      <option value="pangyo">판교지사</option>
+                      <option value="busan">부산지사</option>
+                    </select>
+                  </td>
+                  <th>계약 금융사</th>
+                  <td>
+                    <select id="register-product-select" class="select detail-select" style="width:260px;">
+                      <option>지사를 선택하세요</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th>모집인 선택</th>
+                  <td colspan="3">
+                    <select id="register-recruiter-select" class="select detail-select" style="width:260px;">
+                      <option>지사를 선택하세요</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th>모집인 명</th>
+                  <td><span id="register-recruiter-name" class="detail-value" style="min-width:180px;"></span></td>
+                  <th>모집인 번호</th>
+                  <td><span id="register-recruiter-number" class="detail-value" style="min-width:180px;"></span></td>
+                </tr>
+                <tr>
+                  <th>대출순위</th>
+                  <td colspan="3">
+                    <select class="select detail-select" style="width:220px;">
+                      <option>선순위</option>
+                      <option>2순위</option>
+                      <option>3순위</option>
+                      <option>기타</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 3. 고객정보 -->
           <div class="detail-card">
             <h2 class="detail-card__title">고객정보</h2>
             <table class="detail-table">
@@ -118,6 +193,7 @@
                     <div class="detail-address">
                       <div class="detail-address-row">
                         <span class="detail-value" style="min-width:80px; text-align:center;">15176</span>
+                        <button type="button" class="btn btn--outline" style="height:30px; font-size:12px; padding:0 12px;">주소검색</button>
                       </div>
                       <div class="detail-address-row">
                         <span class="detail-value" style="min-width:320px;">경기 안산시 단원구 광덕대로 145</span>
@@ -132,6 +208,7 @@
                     <div class="detail-address">
                       <div class="detail-address-row">
                         <span class="detail-value" style="min-width:80px; text-align:center;">15176</span>
+                        <button type="button" class="btn btn--outline" style="height:30px; font-size:12px; padding:0 12px;">주소검색</button>
                         <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:#343a40;">
                           <input type="checkbox" checked disabled> 현 거주지 주소와 동일
                         </label>
@@ -151,10 +228,9 @@
                 </tr>
               </tbody>
             </table>
-
           </div>
 
-          <!-- 3. 학생정보 및 직장정보 -->
+          <!-- 4. 학생정보 및 직장정보 -->
           <div class="detail-card">
             <h2 class="detail-card__title">학생정보 및 직장정보</h2>
             <table class="detail-table">
@@ -204,6 +280,7 @@
                     <div class="detail-address">
                       <div class="detail-address-row">
                         <span class="detail-value" style="min-width:80px; text-align:center;">15176</span>
+                        <button type="button" class="btn btn--outline" style="height:30px; font-size:12px; padding:0 12px;">주소검색</button>
                       </div>
                       <div class="detail-address-row">
                         <span class="detail-value" style="min-width:320px;">경기 안산시 단원구 광덕대로 145</span>
@@ -214,7 +291,6 @@
                 </tr>
               </tbody>
             </table>
-
           </div>
 
           <!-- 4. 접촉방법(대부상품) -->
@@ -379,13 +455,27 @@
             </table>
           </div>
 
+          <!-- 8. 첨부파일 -->
+          <div class="detail-card loan-register-attach-card">
+            <h2 class="detail-card__title">첨부파일</h2>
+            <div class="attach-upload-row" style="border:1px solid var(--color-neutral-border); border-radius:4px 4px 0 0;">
+              <button class="btn btn--outline" style="height:36px; font-size:13px; padding:0 14px; white-space:nowrap;">파일선택</button>
+            </div>
+            <div class="attach-row" style="border-radius:0 0 4px 4px;">
+              <a href="#" class="attach-link">선택된 파일명.pdf</a>
+              <span class="attach-date">2026-05-17</span>
+              <button class="attach-del" aria-label="첨부파일 삭제">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              </button>
+            </div>
+          </div>
         </div><!-- /detail-layout__main -->
 
         <!-- ══ 오른쪽 사이드 패널 ══ -->
         <div class="detail-layout__side">
 
           <!-- 대출접수 카드 -->
-          <div class="detail-card">
+          <div class="detail-card loan-register-hidden">
             <h2 class="detail-card__title">대출접수</h2>
 
             <table class="side-table">
@@ -397,17 +487,6 @@
                 <tr>
                   <th>등록일자</th>
                   <td><span style="font-size:13px; color:#495057;">2026-03-27 16:20:52</span></td>
-                </tr>
-                <tr>
-                  <th>접수 구분</th>
-                  <td>
-                    <select class="select detail-select" style="width:100%;">
-                      <option selected>신규</option>
-                      <option>대환</option>
-                      <option>추가</option>
-                      <option>추가연장</option>
-                    </select>
-                  </td>
                 </tr>
                 <tr>
                   <th>모집인 선택</th>
@@ -424,19 +503,23 @@
                   <th>모집인 번호</th>
                   <td><span class="detail-value" style="width:100%; display:block;">10-00014543</span></td>
                 </tr>
-                <tr>
-                  <th>대출순위</th>
-                  <td>
-                    <select class="select detail-select" style="width:100%;">
-                      <option selected>선순위</option>
-                      <option>2순위</option>
-                      <option>3순위</option>
-                      <option>기타</option>
-                    </select>
-                  </td>
-                </tr>
               </tbody>
             </table>
+
+            <!-- 첨부파일 -->
+            <div class="side-subheader">첨부파일</div>
+            <div class="attach-upload-row">
+              <button class="btn btn--outline" style="height:36px; font-size:13px; padding:0 14px; white-space:nowrap;">파일선택</button>
+              <a href="#" class="attach-link" style="flex:1;">홍길동 보완서류.png</a>
+              <span class="attach-date">2026-04-05</span>
+              <button class="attach-del">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              </button>
+            </div>
+
+            <div class="side-action-row">
+              <button class="btn btn--primary">저장 후 금융사 전송</button>
+            </div>
 
             <!-- 메모 수발신 내용 -->
             <div class="side-subheader" style="margin-top:16px;">메모 수발신 내용</div>
@@ -484,8 +567,8 @@
             </div>
           </div>
 
-          <!-- 첨부파일 카드 -->
-          <div class="detail-card">
+          <!-- 첨부파일 + 대출결과 카드 -->
+          <div class="detail-card loan-register-hidden">
             <h2 class="detail-card__title" style="margin-bottom:8px;">첨부파일</h2>
 
             <div class="attach-upload-row" style="border:1px solid var(--color-neutral-border); border-radius:4px 4px 0 0;">
@@ -512,14 +595,10 @@
               <button class="attach-del"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></button>
             </div>
 
-            <div class="side-action-row" style="padding-top:12px;">
-              <button class="btn btn--primary">저장 후 금융사 전송</button>
-            </div>
-          </div>
+            <hr class="side-divider">
 
-          <!-- 대출결과 카드 -->
-          <div class="detail-card">
-            <h2 class="detail-card__title">대출결과</h2>
+            <!-- 대출결과 -->
+            <h2 class="detail-card__title" style="margin-top:16px;">대출결과</h2>
             <table class="side-table">
               <tbody>
                 <tr>
@@ -570,81 +649,6 @@
     </section>
   </main>
  </div>
-
-<div id="product-change-modal" class="modal-overlay" hidden>
-  <div class="modal-panel modal-panel--product" role="dialog" aria-modal="true" aria-labelledby="product-change-title">
-    <div class="modal-panel__header">
-      <h2 id="product-change-title" class="modal-panel__title">상품 변경</h2>
-      <button id="product-change-close" type="button" class="modal-panel__close" aria-label="닫기">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-    </div>
-    <div class="modal-panel__body">
-      <div class="product-select-category-tabs" role="tablist" aria-label="상품 탭메뉴"></div>
-      <div id="product-change-panels" class="product-select-panels">
-        <div class="product-select-item" data-product-category="youth" data-product-category-label="청년">
-          <input type="radio" name="change-product">
-          <span class="product-select-item__summary">
-            <span class="product-select-item__category product-select-item__category--youth">청년</span>
-            <strong class="product-select-item__name">대한저축(청년4대미가입)</strong>
-            <span class="product-select-item__memo product-select-item__memo--highlight">[신용,채무통합,사잇돌조회/4대가입(재직3 납부2회)/법인대표(4대가입 필수]</span>
-            <span class="product-select-item__memo">[서류첨부후(컬러신분증/변제현황캡쳐본必)/기타사항작성/후인증(금융사 안내)]</span>
-          </span>
-        </div>
-        <div class="product-select-item" data-product-category="worker" data-product-category-label="직장인">
-          <input type="radio" name="change-product">
-          <span class="product-select-item__summary">
-            <span class="product-select-item__category product-select-item__category--worker">직장인</span>
-            <strong class="product-select-item__name">직장인 신용대출 프리미엄</strong>
-            <span class="product-select-item__memo product-select-item__memo--highlight">[재직 3개월 이상/급여 2회 이상/4대가입 우대]</span>
-            <span class="product-select-item__memo">[신분증/재직확인/소득자료 확인 후 금융사 전송]</span>
-          </span>
-        </div>
-        <div class="product-select-item" data-product-category="sun" data-product-category-label="햇살론">
-          <input type="radio" name="change-product">
-          <span class="product-select-item__summary">
-            <span class="product-select-item__category product-select-item__category--sun">햇살론</span>
-            <strong class="product-select-item__name">서민금융 햇살론</strong>
-            <span class="product-select-item__memo product-select-item__memo--highlight">[저신용/저소득 고객 대상/재직 및 소득 확인 필수]</span>
-            <span class="product-select-item__memo">[보증심사 후 진행/추가서류 요청 가능]</span>
-          </span>
-        </div>
-        <div class="product-select-item" data-product-category="auto" data-product-category-label="오토">
-          <input type="radio" name="change-product">
-          <span class="product-select-item__summary">
-            <span class="product-select-item__category product-select-item__category--auto">오토</span>
-            <strong class="product-select-item__name">오토 담보대출</strong>
-            <span class="product-select-item__memo product-select-item__memo--highlight">[차량번호/주행거리/소유자 확인 후 한도 산정]</span>
-            <span class="product-select-item__memo">[차량정보 입력 필수/담보 조건 확인]</span>
-          </span>
-        </div>
-        <div class="product-select-item" data-product-category="recovery" data-product-category-label="회파복">
-          <input type="radio" name="change-product">
-          <span class="product-select-item__summary">
-            <span class="product-select-item__category product-select-item__category--recovery">회파복</span>
-            <strong class="product-select-item__name">회생/회복/파산 전용상품</strong>
-            <span class="product-select-item__memo product-select-item__memo--highlight">[회파복구분/법원명/사건번호 입력 필수]</span>
-            <span class="product-select-item__memo">[환급계좌 정보 확인 후 심사 진행]</span>
-          </span>
-        </div>
-        <div class="product-select-item" data-product-category="other" data-product-category-label="기타">
-          <input type="radio" name="change-product">
-          <span class="product-select-item__summary">
-            <span class="product-select-item__category product-select-item__category--other">기타</span>
-            <strong class="product-select-item__name">사업자 운영자금</strong>
-            <span class="product-select-item__memo product-select-item__memo--highlight">[사업자/프리랜서/기타 소득자 상담 후 진행]</span>
-            <span class="product-select-item__memo">[기타사항에 상담 메모 작성 권장]</span>
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="modal-panel__footer">
-      <button id="product-change-cancel" type="button" class="btn btn--outline">취소</button>
-      <button type="button" class="btn btn--primary">변경</button>
-    </div>
-  </div>
-</div>
-
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
 <script>
@@ -670,139 +674,6 @@
       locale: window.flatpickr.l10ns.ko,
       dateFormat: "Y-m-d",
       allowInput: true
-    });
-  }
-
-  function initProductTabs(root) {
-    addProductCardActions(root);
-
-    var tabList = root.querySelector(".product-select-category-tabs");
-    var panels = root.querySelector(".product-select-panels");
-    var items = Array.prototype.slice.call(root.querySelectorAll(".product-select-item[data-product-category]"));
-    var categories = [];
-
-    items.forEach(function (item) {
-      var category = item.getAttribute("data-product-category");
-      var label = item.getAttribute("data-product-category-label") || category;
-      if (!categories.some(function (entry) { return entry.category === category; })) {
-        categories.push({ category: category, label: label });
-      }
-    });
-
-    categories.forEach(function (entry, index) {
-      var tab = document.createElement("button");
-      tab.type = "button";
-      tab.id = "product-change-tab-" + entry.category;
-      tab.className = "product-select-category-tabs__item";
-      tab.setAttribute("data-product-category", entry.category);
-      tab.setAttribute("role", "tab");
-      tab.setAttribute("aria-selected", index === 0 ? "true" : "false");
-      tab.setAttribute("aria-controls", "product-change-panel-" + entry.category);
-      tab.textContent = entry.label;
-      tabList.appendChild(tab);
-
-      var panel = document.createElement("div");
-      panel.id = "product-change-panel-" + entry.category;
-      panel.className = "product-select-list product-select-panel";
-      panel.setAttribute("role", "tabpanel");
-      panel.setAttribute("aria-labelledby", tab.id);
-      panel.hidden = index !== 0;
-
-      items
-        .filter(function (item) {
-          return item.getAttribute("data-product-category") === entry.category;
-        })
-        .forEach(function (item) {
-          item.hidden = false;
-          panel.appendChild(item);
-        });
-
-      panels.appendChild(panel);
-    });
-
-    var tabs = root.querySelectorAll("[data-product-category].product-select-category-tabs__item");
-    var panelList = root.querySelectorAll(".product-select-panel");
-
-    function activate(category) {
-      tabs.forEach(function (tab) {
-        var isActive = tab.getAttribute("data-product-category") === category;
-        tab.classList.toggle("is-active", isActive);
-        tab.setAttribute("aria-selected", isActive ? "true" : "false");
-      });
-
-      panelList.forEach(function (panel) {
-        var isActive = panel.id === "product-change-panel-" + category;
-        panel.hidden = !isActive;
-        if (!isActive) {
-          panel.querySelectorAll("input[type='radio']").forEach(function (input) {
-            input.checked = false;
-          });
-        }
-      });
-    }
-
-    tabs.forEach(function (tab) {
-      tab.addEventListener("click", function () {
-        activate(tab.getAttribute("data-product-category"));
-      });
-    });
-
-    if (categories.length) {
-      activate(categories[0].category);
-    }
-  }
-
-  function addProductCardActions(root) {
-    root.querySelectorAll(".product-select-item__name").forEach(function (nameEl) {
-      if (nameEl.nextElementSibling && nameEl.nextElementSibling.classList.contains("product-select-item__actions")) {
-        return;
-      }
-
-      var actions = document.createElement("span");
-      actions.className = "product-select-item__actions";
-      actions.innerHTML = [
-        '<span class="product-select-item__action" role="button" tabindex="0">상품상세정보</span>',
-        '<span class="product-select-item__action" role="button" tabindex="0">조견표</span>',
-        '<span class="product-select-item__action" role="button" tabindex="0">동의서</span>',
-        '<span class="product-select-item__action product-select-item__action--icon" role="button" tabindex="0">본인인증</span>',
-        '<span class="product-select-item__action product-select-item__action--icon" role="button" tabindex="0">전자서명</span>'
-      ].join("");
-      nameEl.insertAdjacentElement("afterend", actions);
-    });
-  }
-
-  var productChangeModal = document.getElementById("product-change-modal");
-  var productChangeOpen = document.getElementById("product-change-open");
-  var productChangeClose = document.getElementById("product-change-close");
-  var productChangeCancel = document.getElementById("product-change-cancel");
-
-  if (productChangeModal) {
-    initProductTabs(productChangeModal);
-  }
-
-  function openProductChangeModal() {
-    productChangeModal.hidden = false;
-  }
-
-  function closeProductChangeModal() {
-    productChangeModal.hidden = true;
-  }
-
-  if (productChangeOpen) {
-    productChangeOpen.addEventListener("click", openProductChangeModal);
-  }
-
-  [productChangeClose, productChangeCancel].forEach(function (button) {
-    if (button) {
-      button.addEventListener("click", closeProductChangeModal);
-    }
-  });
-
-  if (productChangeModal) {
-    productChangeModal.addEventListener("click", function (event) {
-      if (event.target === productChangeModal) {
-        closeProductChangeModal();
-      }
     });
   }
 
@@ -854,6 +725,211 @@
       } else {
         clearLawfulDefaults();
       }
+    });
+  }
+
+  if (document.body.classList.contains("loan-register-page")) {
+    function addProductCardActions(root) {
+      root.querySelectorAll(".product-select-item__name").forEach(function (nameEl) {
+        if (nameEl.nextElementSibling && nameEl.nextElementSibling.classList.contains("product-select-item__actions")) {
+          return;
+        }
+
+        var actions = document.createElement("span");
+        actions.className = "product-select-item__actions";
+        actions.innerHTML = [
+          '<span class="product-select-item__action" role="button" tabindex="0">상품상세정보</span>',
+          '<span class="product-select-item__action" role="button" tabindex="0">조견표</span>',
+          '<span class="product-select-item__action" role="button" tabindex="0">동의서</span>',
+          '<span class="product-select-item__action product-select-item__action--icon" role="button" tabindex="0">본인인증</span>',
+          '<span class="product-select-item__action product-select-item__action--icon" role="button" tabindex="0">전자서명</span>'
+        ].join("");
+        nameEl.insertAdjacentElement("afterend", actions);
+      });
+    }
+
+    addProductCardActions(document);
+
+    document.querySelectorAll(".product-select-item__action").forEach(function (action) {
+      action.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      });
+
+      action.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      });
+    });
+
+    var productTabList = document.querySelector(".product-select-category-tabs");
+    var productPanels = document.getElementById("product-panels");
+    var productItems = Array.prototype.slice.call(document.querySelectorAll(".product-select-item[data-product-category]"));
+    var productCategories = [];
+
+    productItems.forEach(function (item) {
+      var category = item.getAttribute("data-product-category");
+      var label = item.getAttribute("data-product-category-label") || category;
+      if (!productCategories.some(function (entry) { return entry.category === category; })) {
+        productCategories.push({ category: category, label: label });
+      }
+    });
+
+    productCategories.forEach(function (entry, index) {
+      var tab = document.createElement("button");
+      tab.type = "button";
+      tab.id = "product-tab-" + entry.category;
+      tab.className = "product-select-category-tabs__item";
+      tab.setAttribute("data-product-category", entry.category);
+      tab.setAttribute("role", "tab");
+      tab.setAttribute("aria-selected", index === 0 ? "true" : "false");
+      tab.setAttribute("aria-controls", "product-panel-" + entry.category);
+      tab.textContent = entry.label;
+      productTabList.appendChild(tab);
+
+      var panel = document.createElement("div");
+      panel.id = "product-panel-" + entry.category;
+      panel.className = "product-select-list product-select-panel";
+      panel.setAttribute("role", "tabpanel");
+      panel.setAttribute("aria-labelledby", tab.id);
+      panel.hidden = index !== 0;
+
+      productItems
+        .filter(function (item) {
+          return item.getAttribute("data-product-category") === entry.category;
+        })
+        .forEach(function (item) {
+          item.hidden = false;
+          panel.appendChild(item);
+        });
+
+      productPanels.appendChild(panel);
+    });
+
+    var productTabs = document.querySelectorAll("[data-product-category].product-select-category-tabs__item");
+    var productPanelList = document.querySelectorAll(".product-select-panel");
+
+    function activateProductCategory(category) {
+      productTabs.forEach(function (tab) {
+        var isActive = tab.getAttribute("data-product-category") === category;
+        tab.classList.toggle("is-active", isActive);
+        tab.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+
+      productPanelList.forEach(function (panel) {
+        var isActive = panel.id === "product-panel-" + category;
+        panel.hidden = !isActive;
+        if (!isActive) {
+          panel.querySelectorAll("input[type='radio']").forEach(function (input) {
+            input.checked = false;
+          });
+        }
+      });
+    }
+
+    productTabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        activateProductCategory(tab.getAttribute("data-product-category"));
+      });
+    });
+
+    if (productCategories.length) {
+      activateProductCategory(productCategories[0].category);
+    }
+
+    var branchData = {
+      gangnam: {
+        products: ["대한저축(청년4대미가입)", "직장인 신용대출 프리미엄"],
+        recruiters: [
+          { name: "김창곤", number: "10-00014543" },
+          { name: "최담당", number: "10-00014544" }
+        ]
+      },
+      pangyo: {
+        products: ["직장인 신용대출 프리미엄", "서민금융 햇살론"],
+        recruiters: [
+          { name: "이담당", number: "10-00024501" },
+          { name: "정유진", number: "10-00024502" }
+        ]
+      },
+      busan: {
+        products: ["오토 담보대출", "사업자 운영자금"],
+        recruiters: [
+          { name: "박민나", number: "10-00034501" },
+          { name: "한도훈", number: "10-00034502" }
+        ]
+      }
+    };
+    var branchSelect = document.getElementById("register-branch-select");
+    var productSelect = document.getElementById("register-product-select");
+    var recruiterSelect = document.getElementById("register-recruiter-select");
+    var recruiterName = document.getElementById("register-recruiter-name");
+    var recruiterNumber = document.getElementById("register-recruiter-number");
+
+    function renderRegisterSelectOptions(select, values, emptyText) {
+      select.innerHTML = "";
+      var emptyOption = document.createElement("option");
+      emptyOption.value = "";
+      emptyOption.textContent = emptyText;
+      select.appendChild(emptyOption);
+
+      values.forEach(function (value) {
+        var option = document.createElement("option");
+        option.value = typeof value === "string" ? value : value.name;
+        option.textContent = typeof value === "string" ? value : value.name;
+        if (typeof value !== "string") {
+          option.dataset.recruiterNumber = value.number;
+        }
+        select.appendChild(option);
+      });
+    }
+
+    function clearRecruiterInfo() {
+      recruiterName.textContent = "";
+      recruiterNumber.textContent = "";
+    }
+
+    if (branchSelect && productSelect && recruiterSelect && recruiterName && recruiterNumber) {
+      branchSelect.addEventListener("change", function () {
+        var selectedBranch = branchData[branchSelect.value];
+        renderRegisterSelectOptions(
+          productSelect,
+          selectedBranch ? selectedBranch.products : [],
+          selectedBranch ? "상품 선택" : "지사를 선택하세요"
+        );
+        renderRegisterSelectOptions(
+          recruiterSelect,
+          selectedBranch ? selectedBranch.recruiters : [],
+          selectedBranch ? "모집인 선택" : "지사를 선택하세요"
+        );
+        clearRecruiterInfo();
+      });
+
+      recruiterSelect.addEventListener("change", function () {
+        var selectedOption = recruiterSelect.options[recruiterSelect.selectedIndex];
+        recruiterName.textContent = selectedOption.value;
+        recruiterNumber.textContent = selectedOption.dataset.recruiterNumber || "";
+      });
+    }
+
+    document.querySelectorAll(".detail-value").forEach(function (el) {
+      el.textContent = "";
+    });
+
+    document
+      .querySelectorAll("input[type='text'], input[type='date'], textarea")
+      .forEach(function (el) {
+        el.value = "";
+      });
+
+    document.querySelectorAll("select").forEach(function (el) {
+      el.selectedIndex = 0;
+    });
+
+    document.querySelectorAll("input[type='checkbox']").forEach(function (el) {
+      el.checked = false;
     });
   }
 </script>

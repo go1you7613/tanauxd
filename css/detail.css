@@ -34,6 +34,22 @@
   padding: var(--space-24);
 }
 
+.detail-card__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  margin-bottom: var(--space-16);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-neutral-border);
+}
+
+.detail-card__title-row .detail-card__title {
+  margin: 0;
+  padding: 0;
+  border-bottom: none;
+}
+
 /* 섹션 제목 */
 .detail-card__title {
   font-size: var(--type-section-size);
@@ -225,6 +241,263 @@
   cursor: default;
 }
 
+.product-select-category-tabs {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-4);
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--color-neutral-border);
+}
+
+.product-select-category-tabs__item {
+  height: 34px;
+  min-width: 82px;
+  padding: 0 var(--space-16);
+  border: 1px solid var(--color-neutral-border);
+  border-bottom: none;
+  border-radius: var(--radius-sm);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background: var(--color-neutral-surface);
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  font-weight: var(--type-accent-weight);
+  cursor: pointer;
+  position: relative;
+  bottom: -1px;
+}
+
+.product-select-category-tabs__item.is-active {
+  border-color: var(--color-brand-primary);
+  background: var(--color-brand-primary);
+  color: #fff;
+  z-index: 1;
+}
+
+.product-select-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-8);
+  padding: var(--space-12);
+  border: 1px solid var(--color-neutral-border);
+  border-top: none;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+.product-select-panel[hidden] {
+  display: none;
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-24);
+  background: rgba(17, 24, 39, 0.42);
+}
+
+.modal-panel {
+  width: min(960px, 100%);
+  max-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  background: var(--color-neutral-surface);
+  border-radius: var(--radius-md);
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.22);
+}
+
+.modal-panel--product {
+  width: min(1180px, 100%);
+}
+
+.modal-panel__header,
+.modal-panel__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-12);
+  padding: var(--space-16) var(--space-24);
+  border-bottom: 1px solid var(--color-neutral-border);
+}
+
+.modal-panel__footer {
+  justify-content: flex-end;
+  border-top: 1px solid var(--color-neutral-border);
+  border-bottom: none;
+}
+
+.modal-panel__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: var(--type-heading-weight);
+  color: var(--color-text-strong);
+}
+
+.modal-panel__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--color-neutral-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-neutral-surface);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.modal-panel__body {
+  overflow: auto;
+  padding: var(--space-24);
+}
+
+.product-select-item {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: var(--space-10);
+  align-items: flex-start;
+  padding: var(--space-12);
+  border: 1px solid var(--color-neutral-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-neutral-surface);
+  cursor: default;
+}
+
+.product-select-item:has(input:checked) {
+  border-color: var(--color-neutral-border);
+  background: var(--color-neutral-background);
+}
+
+.product-select-item input {
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: var(--color-brand-primary);
+  cursor: pointer;
+}
+
+.product-select-item__summary {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.product-select-item__category {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 var(--space-8);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: var(--type-accent-weight);
+  border: 1px solid transparent;
+}
+
+.product-select-item__category--youth {
+  color: #1d4ed8;
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.product-select-item__category--worker {
+  color: #047857;
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+}
+
+.product-select-item__category--sun {
+  color: #b45309;
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+.product-select-item__category--auto {
+  color: #0369a1;
+  background: #f0f9ff;
+  border-color: #bae6fd;
+}
+
+.product-select-item__category--recovery {
+  color: #7c3aed;
+  background: #f5f3ff;
+  border-color: #ddd6fe;
+}
+
+.product-select-item__category--other {
+  color: var(--color-text-primary);
+  background: var(--color-neutral-background);
+  border-color: var(--color-neutral-border);
+}
+
+.product-select-item__name {
+  color: var(--color-text-strong);
+  font-size: var(--type-body-size);
+}
+
+.product-select-item__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+  margin: var(--space-6) 0 var(--space-4);
+}
+
+.product-select-item__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 26px;
+  padding: 0 var(--space-8);
+  border: 1px solid var(--color-brand-primary);
+  border-radius: var(--radius-sm);
+  background: var(--color-neutral-surface);
+  color: var(--color-brand-primary);
+  font-size: 11px;
+  font-weight: var(--type-accent-weight);
+  line-height: 1;
+  cursor: pointer;
+}
+
+.product-select-item__action--icon::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+  background: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14 3h7v7'/%3E%3Cpath d='M10 14 21 3'/%3E%3Cpath d='M21 14v7h-7'/%3E%3Cpath d='M3 10V3h7'/%3E%3Cpath d='M3 3l7 7'/%3E%3Cpath d='M3 21l7-7'/%3E%3Cpath d='M14 21h7v-7'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.product-select-item__memo {
+  color: var(--color-text-primary);
+  font-size: 12px;
+  line-height: 1.45;
+  word-break: keep-all;
+}
+
+.product-select-item__memo--highlight {
+  color: var(--color-brand-primary);
+  font-weight: var(--type-accent-weight);
+}
+
+@media (max-width: 1100px) {
+  .product-select-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .product-select-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* 상세 테이블 */
 .detail-table {
   width: 100%;
@@ -299,7 +572,7 @@
 }
 
 .detail-input--wide {
-  width: 100%;
+  width: 720px;
 }
 
 /* 주소 2줄 레이아웃 */
@@ -528,3 +801,41 @@
   border-top: 1px solid var(--color-neutral-border);
   margin: var(--space-16) 0 0;
 }
+
+.js-datepicker {
+  padding-right: 34px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236c757d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 2v4'/%3E%3Cpath d='M16 2v4'/%3E%3Crect width='18' height='18' x='3' y='4' rx='2'/%3E%3Cpath d='M3 10h18'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px 16px;
+}
+
+.loan-register-page .memo-list,
+.loan-register-page .loan-register-hidden,
+.loan-register-page .attach-row {
+  display: none;
+}
+
+.loan-register-page .loan-register-attach-card .attach-row {
+  display: flex;
+}
+
+.loan-register-page .detail-layout__side {
+  display: none;
+}
+
+.loan-register-page .attach-upload-row .attach-link,
+.loan-register-page .attach-upload-row .attach-date,
+.loan-register-page .attach-upload-row .attach-del {
+  display: none;
+}
+
+.loan-register-page .detail-field-group .detail-value {
+  min-width: 80px;
+}
+
+.loan-register-page .detail-value[style*="min-width:40px"] { min-width: 40px !important; }
+.loan-register-page .detail-value[style*="min-width:50px"] { min-width: 50px !important; }
+.loan-register-page .detail-value[style*="min-width:52px"] { min-width: 52px !important; }
+.loan-register-page .detail-value[style*="min-width:60px"] { min-width: 60px !important; }
+.loan-register-page .detail-value[style*="min-width:70px"] { min-width: 70px !important; }

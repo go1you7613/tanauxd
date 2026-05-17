@@ -287,6 +287,21 @@
   font-weight: 600;
 }
 
+.detail-input,
+.detail-select {
+  max-width: 100%;
+  background-color: #efefef;
+  color: #495057;
+}
+
+.detail-input {
+  width: 180px;
+}
+
+.detail-input--wide {
+  width: 100%;
+}
+
 /* 주소 2줄 레이아웃 */
 .detail-address {
   display: flex;

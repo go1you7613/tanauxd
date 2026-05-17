@@ -115,6 +115,13 @@
   font-weight: var(--type-table-header-weight);
 }
 
+.branch-form-grid .branch-section-title {
+  width: auto;
+  text-align: center;
+  color: var(--color-brand-primary);
+  background: var(--color-brand-subtle);
+}
+
 .branch-form-grid .input,
 .branch-form-grid .select {
   width: 100%;

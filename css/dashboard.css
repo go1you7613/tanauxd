@@ -253,7 +253,7 @@
 
 .dashboard-loans {
   height: 560px;
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: hidden;
 }
 
@@ -282,20 +282,38 @@
 }
 
 .dashboard-table {
-  min-width: 1680px;
   width: calc(100% - 48px);
   margin: var(--space-16) var(--space-24) var(--space-24);
   border-collapse: collapse;
+  table-layout: fixed;
 }
+
+.dashboard-table__col-received { width: 136px; }
+.dashboard-table__col-branch { width: 78px; }
+.dashboard-table__col-manager { width: 76px; }
+.dashboard-table__col-apply { width: 64px; }
+.dashboard-table__col-product { width: 134px; }
+.dashboard-table__col-name { width: 68px; }
+.dashboard-table__col-rrn { width: 76px; }
+.dashboard-table__col-amount { width: 80px; }
+.dashboard-table__col-pre-approved { width: 80px; }
+.dashboard-table__col-status { width: 66px; }
+.dashboard-table__col-date { width: 108px; }
+.dashboard-table__col-approved { width: 80px; }
+.dashboard-table__col-rate { width: 58px; }
+.dashboard-table__col-docs { width: 50px; }
+.dashboard-table__col-memo { width: 44px; }
 
 .dashboard-table th,
 .dashboard-table td {
   height: 40px;
-  padding: 0 var(--space-12);
+  padding: 0 var(--space-8);
   border-bottom: 1px solid #edf0f6;
   color: #30394f;
   text-align: left;
   white-space: nowrap;
+  overflow: visible;
+  text-overflow: clip;
 }
 
 .dashboard-table th {
@@ -311,6 +329,19 @@
 .dashboard-table td:not(:first-child),
 .dashboard-table th:not(:first-child) {
   text-align: center;
+}
+
+.dashboard-table th:nth-child(15),
+.dashboard-table td:nth-child(15) {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.dashboard-table td:nth-child(15) {
+  text-align: left;
 }
 
 .dashboard-status {

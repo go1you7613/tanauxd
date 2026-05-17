@@ -116,7 +116,8 @@
                         <span class="detail-value" style="min-width:80px; text-align:center;">15176</span>
                       </div>
                       <div class="detail-address-row">
-                        <span class="detail-value" style="min-width:320px;">경기 안산시 단원구 광덕대로 145, (고잔동, 강희그랜드오피스텔) 724호</span>
+                        <span class="detail-value" style="min-width:320px;">경기 안산시 단원구 광덕대로 145</span>
+                        <input type="text" class="input detail-input" style="width:280px;" value="(고잔동, 강희그랜드오피스텔) 724호">
                       </div>
                     </div>
                   </td>
@@ -132,7 +133,8 @@
                         </label>
                       </div>
                       <div class="detail-address-row">
-                        <span class="detail-value" style="min-width:320px;">경기 안산시 단원구 광덕대로 145, (고잔동, 강희그랜드오피스텔) 724호</span>
+                        <span class="detail-value" style="min-width:320px;">경기 안산시 단원구 광덕대로 145</span>
+                        <input type="text" class="input detail-input" style="width:280px;" value="(고잔동, 강희그랜드오피스텔) 724호">
                       </div>
                     </div>
                   </td>
@@ -147,14 +149,25 @@
             </table>
           </div>
 
-          <!-- 3. 소득 정보 -->
+          <!-- 3. 학생정보 및 직장정보 -->
           <div class="detail-card">
-            <h2 class="detail-card__title">소득 정보</h2>
+            <h2 class="detail-card__title">학생정보 및 직장정보</h2>
             <table class="detail-table">
               <tbody>
                 <tr>
                   <th>직업구분</th>
-                  <td><span class="detail-value" style="min-width:180px;">직장인</span></td>
+                  <td>
+                    <select class="select detail-select" style="width:180px;">
+                      <option>선택</option>
+                      <option selected>직장인</option>
+                      <option>자영업자</option>
+                      <option>대학생</option>
+                      <option>주부</option>
+                      <option>고졸자</option>
+                      <option>프리랜서</option>
+                      <option>기타</option>
+                    </select>
+                  </td>
                   <th>직장명/사업장명</th>
                   <td><span class="detail-value" style="min-width:180px;">(주)대신엘앤비</span></td>
                 </tr>
@@ -188,7 +201,8 @@
                         <span class="detail-value" style="min-width:80px; text-align:center;">15176</span>
                       </div>
                       <div class="detail-address-row">
-                        <span class="detail-value" style="min-width:320px;">경기 안산시 단원구 광덕대로 145, (고잔동, 강희그랜드오피스텔) 724호</span>
+                        <span class="detail-value" style="min-width:320px;">경기 안산시 단원구 광덕대로 145</span>
+                        <input type="text" class="input detail-input" style="width:280px;" value="(고잔동, 강희그랜드오피스텔) 724호">
                       </div>
                     </div>
                   </td>
@@ -206,31 +220,122 @@
                   <th>접촉방법</th>
                   <td colspan="3">
                     <div class="detail-field-group">
-                      <span class="detail-value" style="min-width:220px;">고객이 먼저 중개인에게 연락</span>
+                      <select id="loan-contact-method" class="select detail-select" style="width:260px;">
+                        <option value="" selected>선택</option>
+                        <option>고객이 먼저 중개인에게 연락</option>
+                        <option>중개인이 먼저 고객에게 연락</option>
+                      </select>
                       <label style="display:flex; align-items:center; gap:6px; font-size:13px; color:#343a40;">
-                        <input type="checkbox" checked disabled> 넘버원 적법 사용 시
+                        <input id="numberone-lawful-use" type="checkbox" disabled> 넘버원 적법 사용시
                       </label>
                     </div>
                   </td>
                 </tr>
                 <tr>
                   <th>작성일자</th>
-                  <td><span class="detail-value" style="min-width:180px;">2024-02-11</span></td>
+                  <td><input id="lawful-written-date" type="text" class="input detail-input" value=""></td>
                   <th>대표자</th>
-                  <td><span class="detail-value" style="min-width:180px;">주현</span></td>
+                  <td><input id="lawful-representative" type="text" class="input detail-input" value=""></td>
                 </tr>
                 <tr>
                   <th>담당자</th>
-                  <td><span class="detail-value" style="min-width:180px;">정선우</span></td>
+                  <td><input id="lawful-manager" type="text" class="input detail-input" value=""></td>
                   <th>중개인 접촉 경로</th>
-                  <td><span class="detail-value" style="min-width:180px;">인터넷광고(홈페이지 등 연락처 남김)</span></td>
+                  <td>
+                    <select id="broker-contact-path" class="select detail-select" style="width:270px;">
+                      <option value="">-선택-</option>
+                      <option>-----</option>
+                      <option>인터넷광고(고객이 직접전화)</option>
+                      <option>인터넷광고(홈페이지등 연락처남김)</option>
+                      <option>신문광고</option>
+                      <option>전단지광고</option>
+                      <option>방문신청</option>
+                      <option>기타</option>
+                    </select>
+                  </td>
                 </tr>
                 <tr>
                   <th style="white-space:normal; line-height:1.4;">중개인 접촉 경로<br>상세 정보</th>
                   <td colspan="3">
                     <div class="detail-address">
-                      <span class="detail-value" style="min-width:320px;">홍보전단지</span>
+                      <input id="broker-contact-path-detail" type="text" class="input detail-input detail-input--wide" value="">
                       <span style="font-size:12px; color:var(--color-text-secondary);">※ 중개인 연락처를 알게된 경로가 기타인 경우 기록(필수)</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>홈페이지 주소</th>
+                  <td colspan="3"><input id="broker-homepage-url" type="text" class="input detail-input detail-input--wide" value=""></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 5. 회생, 회복, 파산 정보 -->
+          <div class="detail-card">
+            <h2 class="detail-card__title">회생, 회복, 파산 정보</h2>
+            <table class="detail-table">
+              <tbody>
+                <tr>
+                  <th>회파복구분</th>
+                  <td colspan="3">
+                    <select class="select detail-select" style="width:150px;">
+                      <option selected>선택</option>
+                      <option>회생</option>
+                      <option>회복</option>
+                      <option>파산</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th>법원명</th>
+                  <td colspan="3">
+                    <select class="select detail-select" style="width:280px;">
+                      <option selected>선택</option>
+                      <option>서울회생법원</option>
+                      <option>수원회생법원</option>
+                      <option>부산회생법원</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th>사건번호</th>
+                  <td colspan="3">
+                    <div class="detail-field-group">
+                      <input type="text" class="input detail-input" style="width:420px;">
+                      <span>(2018개회12345 식으로 입력)</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>환급계좌은행</th>
+                  <td>
+                    <select class="select detail-select" style="width:230px;">
+                      <option>선택</option>
+                      <option selected>기업은행</option>
+                      <option>국민은행</option>
+                      <option>신한은행</option>
+                      <option>우리은행</option>
+                      <option>하나은행</option>
+                    </select>
+                  </td>
+                  <th>환급계좌번호</th>
+                  <td>
+                    <input type="text" class="input detail-input" style="width:240px;">
+                  </td>
+                </tr>
+                <tr>
+                  <th>환급계좌예금주</th>
+                  <td><input type="text" class="input detail-input" style="width:260px;"></td>
+                  <th>붙여넣기</th>
+                  <td>
+                    <div class="detail-field-group">
+                      <label style="display:flex; align-items:center; gap:6px;">
+                        <input type="checkbox"> 송금계좌 복사
+                      </label>
+                      <label style="display:flex; align-items:center; gap:6px;">
+                        <input type="checkbox"> 신청인명 복사
+                      </label>
                     </div>
                   </td>
                 </tr>
@@ -238,7 +343,22 @@
             </table>
           </div>
 
-          <!-- 5. 기타사항 -->
+          <!-- 6. 차량정보 -->
+          <div class="detail-card">
+            <h2 class="detail-card__title">차량정보</h2>
+            <table class="detail-table">
+              <tbody>
+                <tr>
+                  <th>차량번호</th>
+                  <td><input type="text" class="input detail-input" style="width:260px;"></td>
+                  <th>주행거리</th>
+                  <td><input type="text" class="input detail-input" style="width:260px;"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 7. 기타사항 -->
           <div class="detail-card">
             <h2 class="detail-card__title">기타사항</h2>
             <table class="detail-table">
@@ -265,7 +385,7 @@
             <table class="side-table">
               <tbody>
                 <tr>
-                  <th>제휴사</th>
+                  <th>지사명</th>
                   <td><span class="detail-value" style="width:100%; display:block;">KUMKANG</span></td>
                 </tr>
                 <tr>
@@ -274,7 +394,14 @@
                 </tr>
                 <tr>
                   <th>모집인 선택</th>
-                  <td><span class="detail-value" style="width:100%; display:block;">김성수(삼호)</span></td>
+                  <td>
+                    <select class="select detail-select" style="width:100%;">
+                      <option>선택</option>
+                      <option selected>김성수(삼호)</option>
+                      <option>김경숙</option>
+                      <option>심해령</option>
+                    </select>
+                  </td>
                 </tr>
                 <tr>
                   <th>모집인 번호</th>
@@ -387,11 +514,20 @@
               <tbody>
                 <tr>
                   <th>진행상태</th>
-                  <td><span class="detail-value" style="width:100%; display:block;">승인</span></td>
+                  <td>
+                    <select class="select detail-select" style="width:100%;">
+                      <option>선택</option>
+                      <option>접수</option>
+                      <option>심사중</option>
+                      <option selected>승인</option>
+                      <option>부결</option>
+                      <option>취소</option>
+                    </select>
+                  </td>
                 </tr>
                 <tr>
                   <th>승인일자</th>
-                  <td><span class="detail-value" style="width:100%; display:block;">2024-02-11</span></td>
+                  <td><input type="date" class="input detail-input" style="width:100%;" value="2024-02-11"></td>
                 </tr>
                 <tr>
                   <th>승인금액</th>
@@ -441,6 +577,57 @@
   document.querySelectorAll("[disabled]").forEach(function (el) {
     el.removeAttribute("disabled");
   });
+
+  var lawfulDefaults = {
+    contactMethod: "고객이 먼저 중개인에게 연락",
+    writtenDate: "20260512",
+    representative: "심해령",
+    manager: "심해령",
+    contactPath: "인터넷광고(홈페이지등 연락처남김)",
+    pathDetail: "",
+    homepageUrl: "https://lady-loan.kr/"
+  };
+
+  var lawfulUseCheckbox = document.getElementById("numberone-lawful-use");
+  var lawfulFields = {
+    contactMethod: document.getElementById("loan-contact-method"),
+    writtenDate: document.getElementById("lawful-written-date"),
+    representative: document.getElementById("lawful-representative"),
+    manager: document.getElementById("lawful-manager"),
+    contactPath: document.getElementById("broker-contact-path"),
+    pathDetail: document.getElementById("broker-contact-path-detail"),
+    homepageUrl: document.getElementById("broker-homepage-url")
+  };
+
+  function applyLawfulDefaults() {
+    lawfulFields.contactMethod.value = lawfulDefaults.contactMethod;
+    lawfulFields.writtenDate.value = lawfulDefaults.writtenDate;
+    lawfulFields.representative.value = lawfulDefaults.representative;
+    lawfulFields.manager.value = lawfulDefaults.manager;
+    lawfulFields.contactPath.value = lawfulDefaults.contactPath;
+    lawfulFields.pathDetail.value = lawfulDefaults.pathDetail;
+    lawfulFields.homepageUrl.value = lawfulDefaults.homepageUrl;
+  }
+
+  function clearLawfulDefaults() {
+    lawfulFields.contactMethod.value = "";
+    lawfulFields.writtenDate.value = "";
+    lawfulFields.representative.value = "";
+    lawfulFields.manager.value = "";
+    lawfulFields.contactPath.value = "";
+    lawfulFields.pathDetail.value = "";
+    lawfulFields.homepageUrl.value = "";
+  }
+
+  if (lawfulUseCheckbox) {
+    lawfulUseCheckbox.addEventListener("change", function () {
+      if (lawfulUseCheckbox.checked) {
+        applyLawfulDefaults();
+      } else {
+        clearLawfulDefaults();
+      }
+    });
+  }
 </script>
 <script src="js/sidebar-render.js"></script>
 </body>

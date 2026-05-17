@@ -18,8 +18,53 @@
   font-weight: 600;
 }
 
-.loans-table-wrap { overflow-x: auto; }
-.loans-table { min-width: 1580px; }
+.loans-table-wrap { overflow-x: hidden; }
+
+.loans-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.loans-table__col-received { width: 132px; }
+.loans-table__col-branch { width: 86px; }
+.loans-table__col-manager { width: 78px; }
+.loans-table__col-apply { width: 78px; }
+.loans-table__col-product { width: 180px; }
+.loans-table__col-name { width: 74px; }
+.loans-table__col-rrn { width: 84px; }
+.loans-table__col-amount { width: 86px; }
+.loans-table__col-status { width: 78px; }
+.loans-table__col-date { width: 108px; }
+.loans-table__col-approved { width: 86px; }
+.loans-table__col-rate { width: 74px; }
+.loans-table__col-docs { width: 62px; }
+.loans-table__col-memo { width: 64px; }
+
+.loans-table th,
+.loans-table td {
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.loans-table .badge,
+.loans-table .tag-product,
+.loans-table .link-name {
+  white-space: nowrap;
+}
+
+.loans-table th:nth-child(14),
+.loans-table td:nth-child(14) {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+  .loans-table-wrap { overflow-x: auto; }
+  .loans-table { min-width: 1320px; }
+}
 
 .tag-product {
   display: inline-block;

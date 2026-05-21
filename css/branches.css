@@ -34,7 +34,7 @@
 }
 
 .branches-table {
-  min-width: 1280px;
+  min-width: 960px;
   table-layout: fixed;
   font-size: var(--type-table-header-size);
 }
@@ -54,9 +54,6 @@
 .branches-table__col-auth { width: 96px; }
 .branches-table__col-role { width: 88px; }
 .branches-table__col-status { width: 96px; }
-.branches-table__col-fee { width: 128px; }
-.branches-table__col-recruiter { width: 120px; }
-.branches-table__col-action { width: 80px; }
 
 .branch-name-link {
   color: var(--color-status-info);
@@ -132,6 +129,55 @@
   word-break: break-word;
 }
 
+.password-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-field .input {
+  padding-right: 40px;
+}
+
+.password-field__toggle {
+  position: absolute;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.password-field__toggle:hover {
+  color: var(--color-brand-accent);
+}
+
+.password-field__icon {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.password-field__toggle[aria-pressed="true"] .password-field__icon--show,
+.password-field__icon--hide {
+  display: none;
+}
+
+.password-field__toggle[aria-pressed="true"] .password-field__icon--hide {
+  display: block;
+}
+
 .branch-inline-options,
 .branch-product-options {
   display: flex;
@@ -145,6 +191,60 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-4);
+}
+
+.branch-address {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.branch-address-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.branch-address-zip {
+  width: 80px;
+  flex: 0 0 80px;
+  text-align: center;
+}
+
+.branch-address-search {
+  height: 30px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+
+.branch-address-main {
+  width: 320px;
+  flex: 0 0 320px;
+}
+
+.branch-address-detail {
+  width: 280px;
+  flex: 0 0 280px;
+  max-width: 280px;
+}
+
+.branch-form-grid .branch-address-zip,
+.branch-form-grid .branch-address-main,
+.branch-form-grid .branch-address-detail {
+  width: auto;
+}
+
+.branch-form-grid .branch-address-zip {
+  width: 80px;
+}
+
+.branch-form-grid .branch-address-main {
+  width: 320px;
+}
+
+.branch-form-grid .branch-address-detail {
+  width: 280px;
 }
 
 .branch-fee-table {

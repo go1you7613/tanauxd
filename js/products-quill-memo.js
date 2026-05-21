@@ -29,7 +29,7 @@
 
     var quill = new Quill("#pd-quill-editor", {
       theme: "snow",
-      placeholder: "메모 내용을 입력하세요.",
+      placeholder: "상품 상세정보를 입력하세요.",
       modules: {
         toolbar: [
           ["bold", "italic", "underline", "strike"],

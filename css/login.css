@@ -47,6 +47,21 @@
   gap: var(--space-8);
 }
 
+.login-error {
+  display: none;
+  padding: var(--space-10) var(--space-12);
+  border: 1px solid rgba(239, 68, 68, 0.28);
+  border-radius: var(--radius-sm);
+  background: rgba(239, 68, 68, 0.08);
+  color: var(--color-status-error);
+  font-size: var(--type-table-header-size);
+  font-weight: var(--type-table-header-weight);
+}
+
+.login-error.is-visible {
+  display: block;
+}
+
 .login-help {
   color: var(--color-text-secondary);
   font-size: var(--type-table-header-size);

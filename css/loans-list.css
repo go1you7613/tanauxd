@@ -27,8 +27,6 @@
 
 .loans-table__col-received { width: 132px; }
 .loans-table__col-branch { width: 86px; }
-.loans-table__col-manager { width: 78px; }
-.loans-table__col-apply { width: 78px; }
 .loans-table__col-product { width: 180px; }
 .loans-table__col-name { width: 74px; }
 .loans-table__col-rrn { width: 84px; }
@@ -52,8 +50,8 @@
   white-space: nowrap;
 }
 
-.loans-table th:nth-child(14),
-.loans-table td:nth-child(14) {
+.loans-table th:nth-child(12),
+.loans-table td:nth-child(12) {
   white-space: normal;
   overflow: visible;
   text-overflow: clip;
@@ -63,7 +61,7 @@
 
 @media (max-width: 768px) {
   .loans-table-wrap { overflow-x: auto; }
-  .loans-table { min-width: 1320px; }
+  .loans-table { min-width: 1164px; }
 }
 
 .tag-product {

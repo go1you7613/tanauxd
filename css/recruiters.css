@@ -34,7 +34,7 @@
 }
 
 .recruiters-table {
-  min-width: 980px;
+  min-width: 860px;
   table-layout: fixed;
   font-size: var(--type-table-header-size);
 }
@@ -46,7 +46,6 @@
   white-space: normal;
 }
 
-.recruiters-table__col-check { width: 48px; }
 .recruiters-table__col-no { width: 64px; }
 .recruiters-table__col-finance { width: 140px; }
 .recruiters-table__col-branch { width: 120px; }
@@ -54,7 +53,6 @@
 .recruiters-table__col-code { width: 180px; }
 .recruiters-table__col-phone { width: 180px; }
 .recruiters-table__col-date { width: 140px; }
-.recruiters-table__col-action { width: 80px; }
 
 .recruiter-name-link {
   color: var(--color-status-info);

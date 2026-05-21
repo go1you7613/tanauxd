@@ -46,7 +46,7 @@
                 <td><span id="pd-view-lender" class="product-detail__readonly-val"></span></td>
               </tr>
               <tr>
-                <th scope="row">진행여부</th>
+                <th scope="row">상태</th>
                 <td><span id="pd-view-progress" class="product-detail__readonly-val"></span></td>
               </tr>
               <tr>
@@ -78,7 +78,7 @@
                 <td><span id="pd-view-line2" class="product-detail__readonly-val"></span></td>
               </tr>
               <tr>
-                <th scope="row">메모</th>
+                <th scope="row">상품 상세정보</th>
                 <td>
                   <div id="pd-view-memo-body" class="product-detail__memo-html"></div>
                 </td>
@@ -91,29 +91,28 @@
           <table class="product-detail-form__grid">
             <tbody>
               <tr>
-                <th scope="row"><label for="pd-name">상품명</label></th>
-                <td><input id="pd-name" class="input" type="text" value="직장인 신용대출 일반"></td>
+                <th scope="row">상품명</th>
+                <td><span id="pd-name" class="product-detail__readonly-val">직장인 신용대출 일반</span></td>
               </tr>
               <tr>
-                <th scope="row"><label for="pd-bank-code">은행코드</label></th>
-                <td><input id="pd-bank-code" class="input" type="text" value="1358" inputmode="numeric"></td>
+                <th scope="row">은행코드</th>
+                <td><span id="pd-bank-code" class="product-detail__readonly-val">1358</span></td>
               </tr>
               <tr>
                 <th scope="row"><label for="pd-category">구분</label></th>
                 <td>
-                  <select id="pd-category" class="select">
+                  <select id="pd-category" class="select" disabled>
                     <option value="">선택</option>
-                    <option>※오토※</option>
-                    <option selected>※회파복※</option>
-                    <option>※청년※</option>
-                    <option>※연계상품※</option>
+                    <option>청년 상품</option>
+                    <option selected>직장인 상품</option>
+                    <option>기타 상품</option>
                   </select>
                 </td>
               </tr>
               <tr>
                 <th scope="row"><label for="pd-lender">대출사</label></th>
                 <td>
-                  <select id="pd-lender" class="select">
+                  <select id="pd-lender" class="select" disabled>
                     <option value="">선택</option>
                     <option selected>온누리AG [113]</option>
                     <option>상품AG [114]</option>
@@ -122,7 +121,7 @@
                 </td>
               </tr>
               <tr>
-                <th scope="row">진행여부</th>
+                <th scope="row">상태</th>
                 <td>
                   <div class="radio-row">
                     <label><input type="radio" name="pd-progress" value="on" checked> 진행</label>
@@ -165,11 +164,11 @@
                 <td><input id="pd-line-memo2" class="input" type="text"></td>
               </tr>
               <tr>
-                <th scope="row">메모</th>
+                <th scope="row">상품 상세정보</th>
                 <td>
                   <div class="memo-quill-wrap">
                     <input type="hidden" name="memo_html" id="pd-memo-html" value="">
-                    <div id="pd-quill-editor" class="memo-quill-editor" role="textbox" aria-multiline="true" aria-label="메모 에디터"></div>
+                    <div id="pd-quill-editor" class="memo-quill-editor" role="textbox" aria-multiline="true" aria-label="상품 상세정보 에디터"></div>
                   </div>
                 </td>
               </tr>

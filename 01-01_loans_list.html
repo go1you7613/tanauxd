@@ -37,9 +37,9 @@
         <div class="field field--date-range">
           <label>최종 처리(승인일)</label>
           <div class="loans-date-range">
-            <input id="f-processed-start" class="input" type="date" value="2026-04-01" aria-label="최종 처리 시작일">
+            <input id="f-processed-start" class="input" type="date" value="2026-05-19" aria-label="최종 처리 시작일">
             <span class="loans-date-range__separator">~</span>
-            <input id="f-processed-end" class="input" type="date" value="2026-04-30" aria-label="최종 처리 종료일">
+            <input id="f-processed-end" class="input" type="date" value="2026-05-19" aria-label="최종 처리 종료일">
           </div>
         </div>
         <div class="field">
@@ -56,7 +56,7 @@
           <input id="f-product" class="input" type="text" placeholder="상품명 입력">
         </div>
         <div class="field">
-          <label for="f-status">처리상태</label>
+          <label for="f-status">상태</label>
           <select id="f-status" class="select">
             <option>전체</option>
             <option>검토중</option>
@@ -80,8 +80,6 @@
           <colgroup>
             <col class="loans-table__col-received">
             <col class="loans-table__col-branch">
-            <col class="loans-table__col-manager">
-            <col class="loans-table__col-apply">
             <col class="loans-table__col-product">
             <col class="loans-table__col-name">
             <col class="loans-table__col-rrn">
@@ -96,15 +94,13 @@
           </colgroup>
           <thead>
             <tr>
-              <th>접수일시</th>
+              <th>등록일시</th>
               <th>지사명</th>
-              <th>전송담당</th>
-              <th class="u-center">신청여부</th>
               <th>상품명</th>
               <th>신청자</th>
               <th>주민번호</th>
               <th class="u-num">신청금액</th>
-              <th class="u-center">처리상태</th>
+              <th class="u-center">상태</th>
               <th class="u-center">처리일</th>
               <th class="u-num">승인금액</th>
               <th class="u-num">승인이율</th>
@@ -117,8 +113,6 @@
             <tr>
               <td>2026-04-22 10:14</td>
               <td>강남지사</td>
-              <td>김창균</td>
-              <td class="u-center"><span class="badge badge--success">신청</span></td>
               <td><span class="tag-product">청년</span>드림 전세대출</td>
               <td>
                 <span class="applicant-tooltip">
@@ -142,15 +136,19 @@
               <td class="u-center">2026-04-22</td>
               <td class="u-num">4,800만</td>
               <td class="u-num">4.50%</td>
-              <td class="u-center"><span class="badge badge--subtle">완료</span></td>
+              <td class="u-center">
+                <button type="button" class="notice-file-icon" data-download-file="loan-document-sample.pdf" aria-label="첨부파일 다운로드" title="첨부파일 다운로드">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M21.4 11.6 12 21a6 6 0 0 1-8.5-8.5l9.8-9.8a4 4 0 0 1 5.7 5.7l-9.8 9.8a2 2 0 0 1-2.8-2.8l9.4-9.4"></path>
+                  </svg>
+                </button>
+              </td>
               <td>-</td>
               <td class="u-center"><button class="badge badge--info badge--memo" type="button" data-memo-open data-modal-target="#memoModal">메모</button></td>
             </tr>
             <tr>
               <td>2026-04-23 09:02</td>
               <td>판교지사</td>
-              <td>이담당</td>
-              <td class="u-center"><span class="badge badge--success">신청</span></td>
               <td><span class="tag-product">직장인</span>신용대출 프리미엄</td>
               <td>
                 <span class="applicant-tooltip">
@@ -169,15 +167,13 @@
               <td class="u-center">-</td>
               <td class="u-num">-</td>
               <td class="u-num">-</td>
-              <td class="u-center"><span class="badge badge--subtle">대기</span></td>
+              <td class="u-center"></td>
               <td>-</td>
               <td class="u-center">-</td>
             </tr>
             <tr>
               <td>2026-04-21 14:48</td>
               <td>부산지사</td>
-              <td>최담당</td>
-              <td class="u-center"><span class="badge badge--subtle">미신청</span></td>
               <td><span class="tag-product">기타</span>사업자 운영자금</td>
               <td>
                 <span class="applicant-tooltip">
@@ -201,7 +197,7 @@
               <td class="u-center">2026-04-21</td>
               <td class="u-num">-</td>
               <td class="u-num">-</td>
-              <td class="u-center"><span class="badge badge--error">반려</span></td>
+              <td class="u-center"></td>
               <td>신용등급 부족</td>
               <td class="u-center"><button class="badge badge--info badge--memo" type="button" data-memo-open data-modal-target="#memoModal">메모</button></td>
             </tr>
@@ -305,6 +301,8 @@
 
 <script src="js/applicant-tooltip.js"></script>
 <script src="js/memo-modal.js"></script>
+<script src="js/attachment-downloads.js"></script>
+<script src="js/date-defaults.js"></script>
 <script src="js/sidebar-render.js"></script>
 </body>
 </html>

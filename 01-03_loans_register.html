@@ -100,7 +100,7 @@
             <table class="detail-table">
               <tbody>
                 <tr>
-                  <th>지사선택</th>
+                  <th>지사 선택</th>
                   <td>
                     <select id="register-branch-select" class="select detail-select" style="width:220px;">
                       <option value="">선택</option>
@@ -237,44 +237,113 @@
               <tbody>
                 <tr>
                   <th>직업구분</th>
-                  <td>
-                    <select class="select detail-select" style="width:180px;">
-                      <option>선택</option>
-                      <option selected>직장인</option>
-                      <option>자영업자</option>
-                      <option>대학생</option>
-                      <option>주부</option>
-                      <option>고졸자</option>
-                      <option>프리랜서</option>
-                      <option>기타</option>
+                  <td colspan="3">
+                    <select class="select detail-select js-job-type" style="width:180px;" required>
+                      <option value="">선택</option>
+                      <option value="worker">직장인</option>
+                      <option value="owner">자영업자</option>
+                      <option value="student">대학생</option>
+                      <option value="graduate">고졸자</option>
+                      <option value="freelancer">프리랜서</option>
+                      <option value="etc">기타</option>
                     </select>
                   </td>
-                  <th>직장명/사업장명</th>
-                  <td><span class="detail-value" style="min-width:180px;">(주)대신엘앤비</span></td>
                 </tr>
-                <tr>
+                <tr data-job-row="work freelance">
+                  <th>직장명/사업장명</th>
+                  <td><input type="text" class="input detail-input" style="width:180px;" value="" required></td>
                   <th>입사일자</th>
-                  <td><input type="text" class="input detail-input js-datepicker" style="width:180px;" value="2024-02-11"></td>
+                  <td><input type="text" class="input detail-input js-datepicker" style="width:180px;" value="2026-05-19" required></td>
+                </tr>
+                <tr data-job-row="work freelance student">
                   <th>연간소득</th>
                   <td>
                     <div class="detail-field-group">
-                      <span class="detail-value">3,000</span>
+                      <input type="text" class="input detail-input" style="width:110px;" value="" inputmode="numeric" data-number-format required>
                       <span>만원</span>
                     </div>
                   </td>
-                </tr>
-                <tr>
                   <th>병역사항</th>
-                  <td><span class="detail-value" style="min-width:180px;">군필</span></td>
+                  <td data-job-military="work">
+                    <select class="select detail-select" style="width:180px;" required>
+                      <option selected>선택</option>
+                      <option>군필</option>
+                      <option>미필</option>
+                      <option>기타</option>
+                    </select>
+                  </td>
+                  <td data-job-military="student" hidden>
+                    <select class="select detail-select" style="width:180px;">
+                      <option selected>군필</option>
+                      <option>미필</option>
+                      <option>면제</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr data-job-row="work">
                   <th>급여일</th>
-                  <td>
+                  <td colspan="3">
                     <div class="detail-field-group">
-                      <span class="detail-value" style="min-width:60px; text-align:center;">11</span>
+                      <input type="text" class="input detail-input" style="width:70px; text-align:center;" value="" inputmode="numeric" data-number-only required>
                       <span>일</span>
                     </div>
                   </td>
                 </tr>
-                <tr>
+                <tr data-job-row="freelance student" hidden>
+                  <th>병역구분</th>
+                  <td colspan="3">
+                    <select class="select detail-select" style="width:180px;">
+                      <option selected>선택</option>
+                      <option>입대예정자</option>
+                      <option>사병</option>
+                      <option>단기부사관</option>
+                      <option>직업군인</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr data-job-row="freelance" hidden>
+                  <th>급여일</th>
+                  <td colspan="3">
+                    <div class="detail-field-group">
+                      <input type="text" class="input detail-input" style="width:70px; text-align:center;" value="" inputmode="numeric" data-number-only>
+                      <span>일</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-job-row="student" hidden>
+                  <th>학교명</th>
+                  <td><input type="text" class="input detail-input" style="width:180px;" required></td>
+                  <th>전공학과</th>
+                  <td><input type="text" class="input detail-input" style="width:180px;" required></td>
+                </tr>
+                <tr data-job-row="student" hidden>
+                  <th>학년</th>
+                  <td>
+                    <select class="select detail-select" style="width:180px;">
+                      <option selected>선택</option>
+                      <option>1학년</option>
+                      <option>2학년</option>
+                      <option>3학년</option>
+                      <option>4학년</option>
+                    </select>
+                  </td>
+                  <th>학번</th>
+                  <td><input type="text" class="input detail-input" style="width:180px;" required></td>
+                </tr>
+                <tr data-job-row="student" hidden>
+                  <th>재학구분</th>
+                  <td>
+                    <select class="select detail-select" style="width:180px;">
+                      <option selected>재학</option>
+                      <option>휴학</option>
+                      <option>재적</option>
+                      <option>중퇴</option>
+                    </select>
+                  </td>
+                  <th>입학년월일</th>
+                  <td><input type="text" class="input detail-input js-datepicker" style="width:180px;" value="2026-05-19"></td>
+                </tr>
+                <tr data-job-row="work freelance">
                   <th>직장주소</th>
                   <td colspan="3">
                     <div class="detail-address">
@@ -285,6 +354,21 @@
                       <div class="detail-address-row">
                         <span class="detail-value" style="min-width:320px;">경기 안산시 단원구 광덕대로 145</span>
                         <input type="text" class="input detail-input" style="width:280px;" value="(고잔동, 강희그랜드오피스텔) 724호">
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-job-row="student" hidden>
+                  <th>학교주소</th>
+                  <td colspan="3">
+                    <div class="detail-address">
+                      <div class="detail-address-row">
+                        <input type="text" class="input detail-input" style="width:80px; text-align:center;" value="">
+                        <button type="button" class="btn btn--outline" style="height:30px; font-size:12px; padding:0 12px;">주소검색</button>
+                      </div>
+                      <div class="detail-address-row">
+                        <input type="text" class="input detail-input" style="width:320px;" value="" required>
+                        <input type="text" class="input detail-input" style="width:280px;" value="">
                       </div>
                     </div>
                   </td>
@@ -408,18 +492,7 @@
                 </tr>
                 <tr>
                   <th>환급계좌예금주</th>
-                  <td><input type="text" class="input detail-input" style="width:260px;"></td>
-                  <th>붙여넣기</th>
-                  <td>
-                    <div class="detail-field-group">
-                      <label style="display:flex; align-items:center; gap:6px;">
-                        <input type="checkbox"> 송금계좌 복사
-                      </label>
-                      <label style="display:flex; align-items:center; gap:6px;">
-                        <input type="checkbox"> 신청인명 복사
-                      </label>
-                    </div>
-                  </td>
+                  <td colspan="3"><input type="text" class="input detail-input" style="width:260px;"></td>
                 </tr>
               </tbody>
             </table>
@@ -434,7 +507,12 @@
                   <th>차량번호</th>
                   <td><input type="text" class="input detail-input" style="width:260px;"></td>
                   <th>주행거리</th>
-                  <td><input type="text" class="input detail-input" style="width:260px;"></td>
+                  <td>
+                    <div class="detail-field-group">
+                      <input type="text" class="input detail-input" style="width:260px;">
+                      <span>km</span>
+                    </div>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -602,7 +680,7 @@
             <table class="side-table">
               <tbody>
                 <tr>
-                  <th>진행상태</th>
+                  <th>상태</th>
                   <td>
                     <select class="select detail-select" style="width:100%;">
                       <option>선택</option>
@@ -616,7 +694,7 @@
                 </tr>
                 <tr>
                   <th>승인일자</th>
-                  <td><input type="text" class="input detail-input js-datepicker" style="width:180px;" value="2024-02-11"></td>
+                  <td><input type="text" class="input detail-input js-datepicker" style="width:180px;" value="2026-05-19"></td>
                 </tr>
                 <tr>
                   <th>승인금액</th>
@@ -649,6 +727,36 @@
     </section>
   </main>
  </div>
+
+<div id="product-detail-info-modal" class="modal-overlay" hidden>
+  <div class="modal-panel modal-panel--product modal-panel--product-detail-info" role="dialog" aria-modal="true" aria-labelledby="product-detail-info-title">
+    <div class="modal-panel__header">
+      <h2 id="product-detail-info-title" class="modal-panel__title">상품상세정보</h2>
+      <button id="product-detail-info-close" type="button" class="modal-panel__close" aria-label="닫기">×</button>
+    </div>
+    <div class="modal-panel__body product-detail-info-modal__body">
+      <p class="product-detail-info-modal__line product-detail-info-modal__line--danger">□ 만19세부터~만45세까지</p>
+      <p class="product-detail-info-modal__line product-detail-info-modal__line--danger">□ 중도상환수수료 개월수 상관없이 2%발생)</p>
+      <p class="product-detail-info-modal__line">□ 지역: 전국(제주도불가)</p>
+      <p class="product-detail-info-modal__line">□ 대출기간,상환방식: 만기일시상환(5년)or원리금균등(고객별 탄력적 적용)</p>
+      <p class="product-detail-info-modal__line">□ 한도: 1500만원까지(4대가입자납부3회자기준)</p>
+      <p class="product-detail-info-modal__line product-detail-info-modal__line--gap">□ 서류: 신분증,셀카샷, 원초본,송금통장,4대가입서류(득납), 거래내역 3개월</p>
+      <p class="product-detail-info-modal__line product-detail-info-modal__line--gap">□ 특이사항</p>
+      <ol class="product-detail-info-modal__list">
+        <li>통합한도 1500만원</li>
+        <li>최근 한자금 사용자 접수가능(신용상회교확인 접수가능) 거래내역상 학자금대출확인시 고졸로 필수인지</li>
+        <li>햇살론 사용자 접수가능(단, 저축은행에서 받은 햇살론이면 한도때문에 진행어려울수있고 대환건으로 진행해야함)</li>
+        <li value="7">대출 완납시 전산상에 삭제가 안되어있을경우 완납증으로 진행불가하며 전산에 삭제되야 진행가능</li>
+        <li value="8">카드론 700만원, 현금서비스 400만원미만 사용자 진행가능</li>
+        <li value="9">검색가능한 직장정보로 진행해야함</li>
+        <li value="10">대부사용자 대환으로가능</li>
+      </ol>
+      <p class="product-detail-info-modal__line product-detail-info-modal__line--danger product-detail-info-modal__line--large-gap">★ 4대미가입자 접수불가</p>
+      <p class="product-detail-info-modal__line product-detail-info-modal__line--gap">심사번호 : 041-1600-2100</p>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
 <script>
@@ -669,17 +777,106 @@
     el.removeAttribute("disabled");
   });
 
-  if (window.flatpickr) {
-    flatpickr(".js-datepicker", {
-      locale: window.flatpickr.l10ns.ko,
-      dateFormat: "Y-m-d",
-      allowInput: true
+  function getTodayDateValue() {
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = String(now.getMonth() + 1).padStart(2, "0");
+    var day = String(now.getDate()).padStart(2, "0");
+    return year + "-" + month + "-" + day;
+  }
+
+  var todayDateValue = getTodayDateValue();
+  document.querySelectorAll(".js-datepicker").forEach(function (el) {
+    var isLawfulDate = el.id === "lawful-written-date";
+    if (!isLawfulDate) {
+      el.value = todayDateValue;
+    }
+    if (window.flatpickr) {
+      flatpickr(el, {
+        locale: window.flatpickr.l10ns.ko,
+        dateFormat: "Y-m-d",
+        defaultDate: isLawfulDate ? null : todayDateValue,
+        allowInput: true
+      });
+    }
+  });
+
+  function setFieldDisabled(container, disabled) {
+    container.querySelectorAll("input, select, textarea").forEach(function (field) {
+      field.disabled = disabled;
     });
   }
 
+  function initJobInfoSections() {
+    document.querySelectorAll(".js-job-type").forEach(function (select) {
+      var card = select.closest(".detail-card");
+      if (!card) {
+        return;
+      }
+
+      var rows = card.querySelectorAll("[data-job-row]");
+      var militaryCells = card.querySelectorAll("[data-job-military]");
+
+      function getGroup(value) {
+        if (value === "worker" || value === "owner") {
+          return "work";
+        }
+        if (value === "student" || value === "graduate") {
+          return "student";
+        }
+        if (value === "freelancer" || value === "etc") {
+          return "freelance";
+        }
+        return "";
+      }
+
+      function render() {
+        var group = getGroup(select.value);
+
+        rows.forEach(function (row) {
+          var groups = row.getAttribute("data-job-row").split(/\s+/);
+          var isVisible = group && groups.indexOf(group) !== -1;
+          row.hidden = !isVisible;
+          setFieldDisabled(row, !isVisible);
+        });
+
+        militaryCells.forEach(function (cell) {
+          var type = cell.getAttribute("data-job-military");
+          var isVisible = (group === "work" && type === "work") || ((group === "student" || group === "freelance") && type === "student");
+          cell.hidden = !isVisible;
+          setFieldDisabled(cell, !isVisible);
+        });
+      }
+
+      select.addEventListener("change", render);
+      render();
+    });
+  }
+
+  function initNumberInputs() {
+    function formatWithComma(value) {
+      var digits = value.replace(/\D/g, "");
+      return digits.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    document.querySelectorAll("[data-number-format]").forEach(function (input) {
+      input.addEventListener("input", function () {
+        input.value = formatWithComma(input.value);
+      });
+    });
+
+    document.querySelectorAll("[data-number-only]").forEach(function (input) {
+      input.addEventListener("input", function () {
+        input.value = input.value.replace(/\D/g, "");
+      });
+    });
+  }
+
+  initNumberInputs();
+
   var lawfulDefaults = {
     contactMethod: "고객이 먼저 중개인에게 연락",
-    writtenDate: "2026-05-12",
+    writtenDate: todayDateValue,
     representative: "심해령",
     manager: "심해령",
     contactPath: "인터넷광고(홈페이지등 연락처남김)",
@@ -701,6 +898,9 @@
   function applyLawfulDefaults() {
     lawfulFields.contactMethod.value = lawfulDefaults.contactMethod;
     lawfulFields.writtenDate.value = lawfulDefaults.writtenDate;
+    if (lawfulFields.writtenDate._flatpickr) {
+      lawfulFields.writtenDate._flatpickr.setDate(lawfulDefaults.writtenDate, true);
+    }
     lawfulFields.representative.value = lawfulDefaults.representative;
     lawfulFields.manager.value = lawfulDefaults.manager;
     lawfulFields.contactPath.value = lawfulDefaults.contactPath;
@@ -711,6 +911,9 @@
   function clearLawfulDefaults() {
     lawfulFields.contactMethod.value = "";
     lawfulFields.writtenDate.value = "";
+    if (lawfulFields.writtenDate._flatpickr) {
+      lawfulFields.writtenDate._flatpickr.clear();
+    }
     lawfulFields.representative.value = "";
     lawfulFields.manager.value = "";
     lawfulFields.contactPath.value = "";
@@ -738,11 +941,11 @@
         var actions = document.createElement("span");
         actions.className = "product-select-item__actions";
         actions.innerHTML = [
-          '<span class="product-select-item__action" role="button" tabindex="0">상품상세정보</span>',
-          '<span class="product-select-item__action" role="button" tabindex="0">조견표</span>',
-          '<span class="product-select-item__action" role="button" tabindex="0">동의서</span>',
-          '<span class="product-select-item__action product-select-item__action--icon" role="button" tabindex="0">본인인증</span>',
-          '<span class="product-select-item__action product-select-item__action--icon" role="button" tabindex="0">전자서명</span>'
+          '<button type="button" class="product-select-item__action" data-product-detail-info-trigger>상품상세정보</button>',
+          '<button type="button" class="product-select-item__action" aria-label="조견표 첨부파일 다운로드 기능 예정">조견표</button>',
+          '<button type="button" class="product-select-item__action" aria-label="동의서 첨부파일 다운로드 기능 예정">동의서</button>',
+          '<a href="https://example.com/product-auth" target="_blank" rel="noopener noreferrer" class="product-select-item__action product-select-item__action--icon" aria-label="본인인증 링크 새 창 열기">본인인증</a>',
+          '<a href="https://example.com/product-sign" target="_blank" rel="noopener noreferrer" class="product-select-item__action product-select-item__action--icon" aria-label="전자서명 링크 새 창 열기">전자서명</a>'
         ].join("");
         nameEl.insertAdjacentElement("afterend", actions);
       });
@@ -750,19 +953,48 @@
 
     addProductCardActions(document);
 
+    var productDetailInfoModal = document.getElementById("product-detail-info-modal");
+    var productDetailInfoClose = document.getElementById("product-detail-info-close");
+
+    function openProductDetailInfoModal() {
+      if (!productDetailInfoModal) {
+        return;
+      }
+      productDetailInfoModal.hidden = false;
+    }
+
+    function closeProductDetailInfoModal() {
+      if (!productDetailInfoModal) {
+        return;
+      }
+      productDetailInfoModal.hidden = true;
+    }
+
     document.querySelectorAll(".product-select-item__action").forEach(function (action) {
       action.addEventListener("click", function (event) {
-        event.preventDefault();
         event.stopPropagation();
       });
+    });
 
-      action.addEventListener("keydown", function (event) {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          event.stopPropagation();
-        }
+    document.querySelectorAll("[data-product-detail-info-trigger]").forEach(function (button) {
+      button.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        openProductDetailInfoModal();
       });
     });
+
+    if (productDetailInfoClose) {
+      productDetailInfoClose.addEventListener("click", closeProductDetailInfoModal);
+    }
+
+    if (productDetailInfoModal) {
+      productDetailInfoModal.addEventListener("click", function (event) {
+        if (event.target === productDetailInfoModal) {
+          closeProductDetailInfoModal();
+        }
+      });
+    }
 
     var productTabList = document.querySelector(".product-select-category-tabs");
     var productPanels = document.getElementById("product-panels");
@@ -931,6 +1163,8 @@
     document.querySelectorAll("input[type='checkbox']").forEach(function (el) {
       el.checked = false;
     });
+
+    initJobInfoSections();
   }
 </script>
 <script src="js/sidebar-render.js"></script>

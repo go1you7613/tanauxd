@@ -16,37 +16,40 @@
   <main class="app__main">
     <header class="page-header">
       <h1>상품관리</h1>
+      <div class="product-page-actions">
+        <a href="02-03_products_register.html" class="btn btn--primary">상품 등록</a>
+      </div>
     </header>
 
     <section class="page-body">
 
       <form class="product-filter-bar" onsubmit="return false;">
         <div class="field">
-          <label for="pf-lender">대출사</label>
+          <label for="pf-lender">금융사</label>
           <select id="pf-lender" class="select">
-            <option>-대출사선택-</option>
+            <option>-금융사선택-</option>
             <option>온누리AG</option>
             <option>상품AG</option>
             <option>삼호저축</option>
           </select>
         </div>
         <div class="field">
-          <label for="pf-progress-filter">진행</label>
+          <label for="pf-progress-filter">상태</label>
           <select id="pf-progress-filter" class="select">
-            <option>-진행선택-</option>
-            <option>예</option>
-            <option>아니오</option>
+            <option>-상태선택-</option>
+            <option>정상</option>
+            <option>중지</option>
           </select>
         </div>
         <div class="field field--combo">
           <label for="pf-keyword">검색</label>
           <div class="field__combo">
-            <input id="pf-keyword" class="input input--text-sm" type="text" placeholder="키워드">
             <select id="pf-keyword-type" class="select input--text-sm" aria-label="검색 구분">
               <option>선택</option>
               <option>상품명</option>
               <option>상품코드</option>
             </select>
+            <input id="pf-keyword" class="input input--text-sm" type="text" placeholder="키워드">
           </div>
         </div>
         <div class="product-filter-bar__actions">
@@ -59,14 +62,13 @@
         <table class="table products-table">
           <thead>
             <tr>
-              <th class="products-table__col-check u-center"><input type="checkbox" aria-label="전체 선택"></th>
               <th class="products-table__col-no">NO</th>
-              <th class="products-table__col-lender">대출사명</th>
+              <th class="products-table__col-lender">금융사명</th>
               <th class="products-table__col-name">상품명</th>
               <th class="products-table__col-code">상품코드</th>
               <th class="products-table__col-bank">은행코드</th>
               <th class="products-table__col-type">상품구분</th>
-              <th class="products-table__col-progress">진행여부</th>
+              <th class="products-table__col-progress">상태</th>
               <th class="products-table__col-consent">동의서</th>
               <th class="products-table__col-condition">조건표</th>
               <th class="products-table__col-action">삭제</th>
@@ -74,7 +76,6 @@
           </thead>
           <tbody>
             <tr>
-              <td class="u-center"><input type="checkbox" aria-label="행 선택"></td>
               <td class="u-center">1</td>
               <td>온누리AG [113]</td>
               <td>
@@ -83,13 +84,18 @@
               <td class="u-center">[414]</td>
               <td>1358</td>
               <td>※회파복※</td>
-              <td class="u-center">예</td>
-              <td>260129</td>
+              <td class="u-center">정상</td>
+              <td class="u-center">
+                <span class="product-file-icon" role="img" aria-label="동의서 첨부파일">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M21.4 11.6 12 21a6 6 0 0 1-8.5-8.5l9.8-9.8a4 4 0 0 1 5.7 5.7l-9.8 9.8a2 2 0 0 1-2.8-2.8l9.4-9.4"></path>
+                  </svg>
+                </span>
+              </td>
               <td>-</td>
               <td class="u-center"><button type="button" class="btn--row-delete">삭제</button></td>
             </tr>
             <tr>
-              <td class="u-center"><input type="checkbox" aria-label="행 선택"></td>
               <td class="u-center">2</td>
               <td>상품AG [115]</td>
               <td>
@@ -98,13 +104,12 @@
               <td class="u-center">[415]</td>
               <td>1359</td>
               <td>※청년※</td>
-              <td class="u-center">아니오</td>
+              <td class="u-center">중지</td>
               <td>-</td>
               <td>-</td>
               <td class="u-center"><button type="button" class="btn--row-delete">삭제</button></td>
             </tr>
             <tr>
-              <td class="u-center"><input type="checkbox" aria-label="행 선택"></td>
               <td class="u-center">3</td>
               <td>온누리AG [113]</td>
               <td>
@@ -113,13 +118,18 @@
               <td class="u-center">[416]</td>
               <td>1360</td>
               <td>※연계상품※</td>
-              <td class="u-center">예</td>
-              <td>260201</td>
+              <td class="u-center">정상</td>
+              <td class="u-center">
+                <span class="product-file-icon" role="img" aria-label="동의서 첨부파일">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M21.4 11.6 12 21a6 6 0 0 1-8.5-8.5l9.8-9.8a4 4 0 0 1 5.7 5.7l-9.8 9.8a2 2 0 0 1-2.8-2.8l9.4-9.4"></path>
+                  </svg>
+                </span>
+              </td>
               <td>-</td>
               <td class="u-center"><button type="button" class="btn--row-delete">삭제</button></td>
             </tr>
             <tr>
-              <td class="u-center"><input type="checkbox" aria-label="행 선택"></td>
               <td class="u-center">4</td>
               <td>삼호저축</td>
               <td>
@@ -128,13 +138,12 @@
               <td class="u-center">[417]</td>
               <td>-</td>
               <td>※오토※</td>
-              <td class="u-center">예</td>
+              <td class="u-center">정상</td>
               <td>-</td>
               <td>-</td>
               <td class="u-center"><button type="button" class="btn--row-delete">삭제</button></td>
             </tr>
             <tr>
-              <td class="u-center"><input type="checkbox" aria-label="행 선택"></td>
               <td class="u-center">5</td>
               <td>상품AG [114]</td>
               <td>
@@ -143,7 +152,7 @@
               <td class="u-center">[418]</td>
               <td>9001</td>
               <td>※청년※</td>
-              <td class="u-center">아니오</td>
+              <td class="u-center">중지</td>
               <td>-</td>
               <td>-</td>
               <td class="u-center"><button type="button" class="btn--row-delete">삭제</button></td>

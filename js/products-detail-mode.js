@@ -15,7 +15,10 @@
   function captureState() {
     var getVal = function (id) {
       var el = document.getElementById(id);
-      return el ? el.value : "";
+      if (!el) {
+        return "";
+      }
+      return "value" in el ? el.value : el.textContent || "";
     };
     var progress =
       (document.querySelector('input[name="pd-progress"]:checked') || {}).value ||
@@ -55,7 +58,11 @@
     var setVal = function (id, v) {
       var el = document.getElementById(id);
       if (el) {
-        el.value = v;
+        if ("value" in el) {
+          el.value = v;
+        } else {
+          el.textContent = v;
+        }
       }
     };
     setVal("pd-name", state.name);
@@ -121,7 +128,11 @@
   function syncViewFromForm() {
     var getVal = function (id) {
       var el = document.getElementById(id);
-      return el ? el.value.trim() : "";
+      if (!el) {
+        return "";
+      }
+      var raw = "value" in el ? el.value : el.textContent || "";
+      return raw.trim();
     };
     var setSpan = function (id, text) {
       var el = document.getElementById(id);

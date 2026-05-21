@@ -27,11 +27,11 @@
             <tr><th scope="row"><label for="branch-name">지사명</label></th><td><input id="branch-name" class="input" type="text"></td></tr>
             <tr><th scope="row"><label for="branch-code">지사코드</label></th><td><input id="branch-code" class="input" type="text"></td></tr>
             <tr><th scope="row"><label for="branch-id">아이디</label></th><td><input id="branch-id" class="input" type="text" pattern="[A-Za-z0-9]+" title="아이디는 영문과 숫자만 입력할 수 있습니다."></td></tr>
-            <tr><th scope="row"><label for="branch-password">비밀번호</label></th><td><input id="branch-password" class="input" type="password"></td></tr>
+            <tr><th scope="row"><label for="branch-password">비밀번호</label></th><td><div class="password-field"><input id="branch-password" class="input" type="password"><button type="button" class="password-field__toggle" aria-label="비밀번호 보기" aria-pressed="false" data-password-toggle="#branch-password"><svg class="password-field__icon password-field__icon--show" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg><svg class="password-field__icon password-field__icon--hide" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle><path d="M4 4l16 16"></path></svg></button></div></td></tr>
             <tr><th scope="row"><label for="branch-auth-code">인증코드</label></th><td><input id="branch-auth-code" class="input" type="text" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="6자리"></td></tr>
             <tr><th scope="row"><label for="branch-role">권한</label></th><td><select id="branch-role" class="select"><option>총괄관리자</option><option selected>지사</option><option>금융사</option><option>대출사</option><option>관리자</option></select></td></tr>
-            <tr><th scope="row">수수료구분</th><td><div class="branch-inline-options"><label><input type="radio" name="fee-type" checked> 수수료정책</label><label><input type="radio" name="fee-type"> 상품별수수료</label></div></td></tr>
-            <tr>
+            <tr><th scope="row">수수료구분</th><td><div class="branch-inline-options"><label><input type="radio" name="fee-type" value="basic" checked> 기본수수료</label><label><input type="radio" name="fee-type" value="finance"> 금융사 별 수수료</label></div></td></tr>
+            <tr data-fee-section="basic">
               <th scope="row">기본 수수료</th>
               <td>
                 <table class="branch-fee-table">
@@ -40,8 +40,8 @@
                 </table>
               </td>
             </tr>
-            <tr>
-              <th scope="row">상품별 수수료</th>
+            <tr data-fee-section="finance" hidden>
+              <th scope="row">금융사 별 수수료</th>
               <td>
                 <table class="branch-fee-table">
                   <thead><tr><th>상품명</th><th>~ 500만원</th><th>500 ~ 1000만원</th><th>1000만원 ~</th></tr></thead>
@@ -53,9 +53,28 @@
             <tr><th scope="row"><label for="branch-manager">담당자 명</label></th><td><input id="branch-manager" class="input" type="text"></td></tr>
             <tr><th scope="row">전화번호</th><td><input class="input" type="text"></td></tr>
             <tr><th scope="row">핸드폰번호</th><td><input class="input" type="text"></td></tr>
-            <tr><th scope="row">주소</th><td><input class="input" type="text"></td></tr>
+            <tr>
+              <th scope="row">주소</th>
+              <td>
+                <div class="branch-address">
+                  <div class="branch-address-row">
+                    <input class="input branch-address-zip" type="text" inputmode="numeric">
+                    <button type="button" class="btn btn--outline branch-address-search">주소검색</button>
+                  </div>
+                  <div class="branch-address-row">
+                    <input class="input branch-address-main" type="text">
+                    <input class="input branch-address-detail" type="text">
+                  </div>
+                </div>
+              </td>
+            </tr>
             <tr><th scope="row">상품숨김</th><td><div class="branch-inline-options"><label><input type="radio" name="hide-product" checked> 정상</label><label><input type="radio" name="hide-product"> 숨김</label></div></td></tr>
             <tr><th scope="row">사용여부</th><td><div class="branch-inline-options"><label><input type="radio" name="use-yn" checked> 사용</label><label><input type="radio" name="use-yn"> 사용안함</label></div></td></tr>
+            <tr><th scope="row" colspan="2" class="branch-section-title">대출경로표시 정보</th></tr>
+            <tr><th scope="row"><label for="branch-route-company">업체명</label></th><td><input id="branch-route-company" class="input" type="text"></td></tr>
+            <tr><th scope="row"><label for="branch-route-association-no">협회등록번호</label></th><td><input id="branch-route-association-no" class="input" type="text"></td></tr>
+            <tr><th scope="row"><label for="branch-route-loan-business-no">대부업번호</label></th><td><input id="branch-route-loan-business-no" class="input" type="text"></td></tr>
+            <tr><th scope="row"><label for="branch-route-phone">전화번호</label></th><td><input id="branch-route-phone" class="input" type="text"></td></tr>
           </tbody>
         </table>
         <div class="branch-actions">
@@ -67,5 +86,7 @@
   </main>
 </div>
 <script src="js/sidebar-render.js"></script>
+<script src="js/branches-password-toggle.js"></script>
+<script src="js/branches-fee-toggle.js"></script>
 </body>
 </html>
